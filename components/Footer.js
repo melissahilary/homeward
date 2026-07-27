@@ -36,6 +36,7 @@ const COLUMNS = [
   {
     title: "Library",
     links: [
+      { label: "When it goes wrong", href: "/scenarios" },
       { label: "By medication", href: "/drugs" },
       { label: "State rules", href: "/states" },
       { label: "Your three rights", href: "/rights" },

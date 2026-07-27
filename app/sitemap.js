@@ -2,6 +2,7 @@ import { STATES } from "@/lib/states";
 import { RIGHTS_LONG } from "@/lib/site";
 import { EMAILS } from "@/lib/emails";
 import { DRUGS } from "@/lib/drugs";
+import { SCENARIOS } from "@/lib/scenarios";
 
 const BASE = "https://daykeep.app";
 
@@ -27,6 +28,7 @@ const STATIC = [
   "/rights",
   "/states",
   "/drugs",
+  "/scenarios",
   "/glossary",
   "/not-for",
   "/login",
@@ -51,6 +53,7 @@ export default function sitemap() {
     ...RIGHTS_LONG.items.map((r) => `/rights/${r.slug}`),
     ...STATES.map((s) => `/states/${s.slug}`),
     ...DRUGS.map((d) => `/drugs/${d.slug}`),
+    ...SCENARIOS.map((s) => `/scenarios/${s.slug}`),
     ...EMAILS.map((e) => `/email/${e.slug}`),
   ];
   return paths.map((path) => ({

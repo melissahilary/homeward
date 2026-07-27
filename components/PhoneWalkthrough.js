@@ -131,33 +131,54 @@ export default function PhoneWalkthrough() {
 function Phone({ phase }) {
   const lastShown = phase.lastIndexOf(2);
   return (
+    // Device bezel: titanium edge, deep shadow, crisp corners.
     <div
-      className="mx-auto w-full max-w-[330px] rounded-[2.6rem] p-3"
+      className="relative mx-auto w-full max-w-[318px]"
       style={{
-        background: "linear-gradient(180deg, #1b1912 0%, #121210 55%)",
-        border: "1px solid rgba(255,255,255,0.10)",
+        padding: "11px",
+        borderRadius: "3.3rem",
+        background: "linear-gradient(160deg, #3a3a3d 0%, #0b0b0c 22%, #050506 55%, #17171a 100%)",
         boxShadow:
-          "0 40px 70px -30px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.06)",
+          "0 55px 90px -35px rgba(0,0,0,0.9), 0 0 0 1px rgba(0,0,0,0.6), inset 0 1px 1px rgba(255,255,255,0.14)",
       }}
-      aria-label="A phone showing three text messages across the month"
+      aria-label="An iPhone showing three text messages across the month"
     >
-      <div className="rounded-[2.1rem] px-4 pb-6 pt-4" style={{ background: "#0f0e0c" }}>
-        {/* Minimal header: who, and a time. No status bar chrome. */}
-        <div className="flex items-center justify-between border-b border-[rgba(255,255,255,0.07)] pb-3">
-          <div className="flex items-center gap-2.5">
-            <span
-              className="flex h-7 w-7 items-center justify-center rounded-full text-[0.7rem] font-semibold"
-              style={{ background: "#26241f", color: "#F4F1E8" }}
-            >
-              D
-            </span>
-            <span className="text-base font-medium text-ink">Daykeep</span>
-          </div>
-          <span className="font-mono text-xs text-ink-faint">Text message</span>
+      {/* Screen */}
+      <div
+        className="relative overflow-hidden"
+        style={{ borderRadius: "2.7rem", background: "#0a0a0c", minHeight: "540px" }}
+      >
+        {/* Dynamic Island */}
+        <div
+          className="absolute left-1/2 top-[13px] z-20 flex -translate-x-1/2 items-center justify-end gap-2"
+          style={{ width: "94px", height: "27px", background: "#000", borderRadius: "999px", paddingRight: "9px" }}
+        >
+          <span style={{ width: "7px", height: "7px", borderRadius: "999px", background: "#1c1c22" }} />
+        </div>
+
+        {/* Status bar */}
+        <div className="flex items-center justify-between px-6 pt-3.5 text-white">
+          <span className="text-[13px] font-semibold tracking-tight">9:41</span>
+          <span className="flex items-center gap-1.5">
+            <SignalIcon />
+            <WifiIcon />
+            <BatteryIcon />
+          </span>
+        </div>
+
+        {/* iMessage contact header */}
+        <div className="flex flex-col items-center gap-1 border-b border-[rgba(255,255,255,0.07)] px-4 pb-3 pt-3">
+          <span
+            className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold"
+            style={{ background: "#26241f", color: "#F4F1E8" }}
+          >
+            D
+          </span>
+          <span className="text-[13px] font-medium text-white">Daykeep</span>
         </div>
 
         {/* Thread */}
-        <div className="flex min-h-[280px] flex-col gap-4 pt-5">
+        <div className="flex flex-col gap-4 px-4 pb-10 pt-5">
           {BLOCKS.map((b, i) => {
             const p = phase[i];
             if (p === 0) return null;
@@ -165,12 +186,8 @@ function Phone({ phase }) {
             return (
               <div key={i} className="dk-bubble-in flex flex-col items-start">
                 <div
-                  className="max-w-[86%] rounded-2xl rounded-bl-md px-4 py-2.5 text-[0.95rem] leading-snug"
-                  style={{
-                    background: "#26241F",
-                    color: "#F4F1E8",
-                    border: "1px solid rgba(255,255,255,0.05)",
-                  }}
+                  className="max-w-[86%] rounded-[1.35rem] rounded-bl-md px-3.5 py-2.5 text-[0.92rem] leading-snug"
+                  style={{ background: "#262528", color: "#F4F1E8" }}
                 >
                   {typeof b.bubble === "string" ? (
                     b.bubble
@@ -182,7 +199,7 @@ function Phone({ phase }) {
                     </>
                   )}
                 </div>
-                <span className="dk-fade-in mt-1 pl-1 font-mono text-[0.66rem] text-ink-faint">
+                <span className="dk-fade-in mt-1 pl-1.5 text-[0.62rem] font-medium uppercase tracking-wide text-ink-faint">
                   {b.time}
                   {i === lastShown ? " · Delivered" : ""}
                 </span>
@@ -197,14 +214,42 @@ function Phone({ phase }) {
 
 function Typing() {
   return (
-    <div className="flex items-center gap-1.5 rounded-2xl rounded-bl-md px-4 py-3.5" style={{ background: "#26241F", width: "fit-content" }}>
+    <div
+      className="flex items-center gap-1.5 rounded-[1.35rem] rounded-bl-md px-4 py-3.5"
+      style={{ background: "#262528", width: "fit-content" }}
+    >
       {[0, 1, 2].map((d) => (
-        <span
-          key={d}
-          className="dk-typing-dot h-2 w-2 rounded-full"
-          style={{ background: "#8A857A" }}
-        />
+        <span key={d} className="dk-typing-dot h-2 w-2 rounded-full" style={{ background: "#8f8f96" }} />
       ))}
     </div>
+  );
+}
+
+function SignalIcon() {
+  return (
+    <svg width="17" height="11" viewBox="0 0 17 11" fill="white" aria-hidden="true">
+      <rect x="0" y="7" width="3" height="4" rx="1" />
+      <rect x="4.5" y="5" width="3" height="6" rx="1" />
+      <rect x="9" y="2.5" width="3" height="8.5" rx="1" />
+      <rect x="13.5" y="0" width="3" height="11" rx="1" />
+    </svg>
+  );
+}
+function WifiIcon() {
+  return (
+    <svg width="16" height="11" viewBox="0 0 16 12" fill="white" aria-hidden="true">
+      <path d="M8 2.5c2.6 0 5 1 6.8 2.7l-1.4 1.5A7.6 7.6 0 0 0 8 4.5 7.6 7.6 0 0 0 2.6 6.7L1.2 5.2A9.6 9.6 0 0 1 8 2.5Z" />
+      <path d="M8 6.2c1.5 0 2.9.6 3.9 1.6l-1.5 1.5A3.4 3.4 0 0 0 8 8.2c-.9 0-1.8.4-2.4 1.1L4.1 7.8A5.4 5.4 0 0 1 8 6.2Z" />
+      <circle cx="8" cy="10.4" r="1.3" />
+    </svg>
+  );
+}
+function BatteryIcon() {
+  return (
+    <svg width="25" height="12" viewBox="0 0 25 12" fill="none" aria-hidden="true">
+      <rect x="0.5" y="0.5" width="21" height="11" rx="3" stroke="white" strokeOpacity="0.45" />
+      <rect x="2" y="2" width="18" height="8" rx="1.6" fill="white" />
+      <rect x="22.5" y="4" width="1.8" height="4" rx="0.9" fill="white" fillOpacity="0.45" />
+    </svg>
   );
 }
