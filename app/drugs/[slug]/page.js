@@ -12,7 +12,7 @@ export function generateMetadata({ params }) {
   const d = getDrug(params.slug);
   if (!d) return { title: "Not found" };
   return {
-    title: `${d.molecule} shortage — what to do when your pharmacy is out`,
+    title: `${d.molecule} shortage, what to do when your pharmacy is out`,
     description: `${d.molecule} (also sold as ${d.brands.join(", ")}) has no refills. ${d.summary}`,
   };
 }

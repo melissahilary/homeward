@@ -6,7 +6,7 @@ import { DRUGS } from "@/lib/drugs";
 export const metadata = {
   title: "By medication",
   description:
-    "Prescription stimulants have no refills. Pages by molecule and brand — amphetamine, lisdexamfetamine, methylphenidate, and more — with what to do when your pharmacy is out.",
+    "Prescription stimulants have no refills. Pages by molecule and brand, amphetamine, lisdexamfetamine, methylphenidate, and more, with what to do when your pharmacy is out.",
 };
 
 export default function DrugsPage() {

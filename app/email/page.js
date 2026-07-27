@@ -21,7 +21,7 @@ export default function EmailIndex() {
           <p className="mt-4 text-lg text-ink-soft">
             Email is the product; the website is the wrapper. If the day-22 email
             is good, nothing else has to be. All plain text, no images, no
-            tracking pixels — so they land in the inbox, not spam.
+            tracking pixels, so they land in the inbox, not spam.
           </p>
         </div>
 

@@ -5,7 +5,7 @@ import { ACCOUNT } from "@/lib/site";
 export const metadata = {
   title: "Your account",
   description:
-    "Plan, renewal date, one-click cancel, refund, receipt, and data export — all at the same depth.",
+    "Plan, renewal date, one-click cancel, refund, receipt, and data export, all at the same depth.",
 };
 
 // Demo state. Cancel lives at the same depth as everything else.

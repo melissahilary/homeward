@@ -20,7 +20,7 @@ export default function SignupForm() {
         <p className="text-xl font-semibold text-ink">You&rsquo;re set.</p>
         <p className="mt-2 text-base text-ink-soft">
           Check your email. We start the countdown from your last fill date and
-          reach out on day 22 — before you run out, not after.
+          reach out on day 22, before you run out, not after.
         </p>
       </div>
     );
@@ -68,7 +68,7 @@ export default function SignupForm() {
         ))}
       </div>
 
-      {/* Consent — separate, unchecked, unbundled. */}
+      {/* Consent, separate, unchecked, unbundled. */}
       <fieldset className="mt-6 space-y-3 border-t border-line pt-5">
         <legend className="sr-only">Consent</legend>
         <label className="flex cursor-pointer items-start gap-3 text-base text-ink">
@@ -131,7 +131,7 @@ export default function SignupForm() {
         disabled={!agreeTerms || !consentHealth}
         className="btn btn-block mt-4 disabled:cursor-not-allowed disabled:opacity-40"
       >
-        Start — {PRICING.year} / year
+        Start, {PRICING.year} / year
       </button>
       <p className="mt-3 text-sm text-ink-faint">
         {PRICING.refundDays}-day refund, one click, no conversation. We email you

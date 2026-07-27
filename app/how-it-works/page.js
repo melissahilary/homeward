@@ -7,7 +7,7 @@ import { HOWITWORKS } from "@/lib/site";
 export const metadata = {
   title: "How It Works",
   description:
-    "You already run this loop. Daykeep instruments it — day 22 to close — so timing stops being your job to remember.",
+    "You already run this loop. Daykeep instruments it, day 22 to close, so timing stops being your job to remember.",
 };
 
 export default function HowItWorksPage() {
@@ -42,7 +42,7 @@ export default function HowItWorksPage() {
             </div>
           </div>
           <Link href="/diagram" className="link mt-4 inline-block text-lg">
-            Download the diagram — PNG, SVG, or print
+            Download the diagram, PNG, SVG, or print
           </Link>
         </section>
 

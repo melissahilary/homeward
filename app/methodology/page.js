@@ -15,19 +15,19 @@ const SECTIONS = [
   },
   {
     h: "What counts as an attempt",
-    body: "An attempt is one person trying one specific action — a fill, or a transfer — for one drug, strength, and manufacturer, at one named pharmacy, on one date. Each attempt has a binary outcome. Browsing, a call to ask about stock, or any report we cannot tie to a specific counter and action does not count.",
+    body: "An attempt is one person trying one specific action, a fill, or a transfer, for one drug, strength, and manufacturer, at one named pharmacy, on one date. Each attempt has a binary outcome. Browsing, a call to ask about stock, or any report we cannot tie to a specific counter and action does not count.",
   },
   {
     h: "What counts as a completion",
-    body: "A completion is an attempt that ended with the medication in hand at that pharmacy. A transfer completion is a transfer that the destination pharmacy actually finished — not one that was merely requested.",
+    body: "A completion is an attempt that ended with the medication in hand at that pharmacy. A transfer completion is a transfer that the destination pharmacy actually finished, not one that was merely requested.",
   },
   {
     h: "How pharmacies are ranked",
-    body: "Pharmacies are ranked by recorded completion rate over a rolling 90-day window, for the exact drug, strength, and manufacturer you track — never a general “has stock.” Rank one is a probability across recorded attempts, not a phone-book entry.",
+    body: "Pharmacies are ranked by recorded completion rate over a rolling 90-day window, for the exact drug, strength, and manufacturer you track, never a general “has stock.” Rank one is a probability across recorded attempts, not a phone-book entry.",
   },
   {
     h: "Confidence limits",
-    body: "Every recommendation shows its sample size, always. Below a floor of recorded attempts we do not rank a pharmacy at all — we say so rather than guess. A rate from 47 attempts is not a rate from 4, and the count sits on the card so you can weigh it yourself. Small samples, new pharmacies, and rare strengths carry more uncertainty, and recent reports count for more than old ones.",
+    body: "Every recommendation shows its sample size, always. Below a floor of recorded attempts we do not rank a pharmacy at all, we say so rather than guess. A rate from 47 attempts is not a rate from 4, and the count sits on the card so you can weigh it yourself. Small samples, new pharmacies, and rare strengths carry more uncertainty, and recent reports count for more than old ones.",
   },
   {
     h: "What we do not claim",
@@ -54,7 +54,7 @@ export default function MethodologyPage() {
             Methodology
           </h1>
           <p className="mt-4 text-lg text-ink-soft">
-            How the map is built, in enough detail to trust it — and to cite it.
+            How the map is built, in enough detail to trust it, and to cite it.
             Every figure on this site follows the rules below.
           </p>
         </div>

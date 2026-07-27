@@ -20,7 +20,7 @@ export default function SafetyPage() {
           <p className="mt-4 text-lg text-ink-soft">{SAFETY.intro}</p>
         </div>
 
-        {/* Crisis — plain and first. */}
+        {/* Crisis, plain and first. */}
         <div className="mt-8 max-w-measure rounded-xl border-2 border-expired bg-white p-6">
           <p className="text-base font-semibold uppercase tracking-wide text-expired">
             {SAFETY.crisis.label}

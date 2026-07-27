@@ -1,4 +1,4 @@
-// Read-only view for a partner or parent. No send buttons, no edits — a
+// Read-only view for a partner or parent. No send buttons, no edits, a
 // second person we serve, not just a feature. Demo state.
 export default function CaregiverView() {
   return (
@@ -20,7 +20,7 @@ export default function CaregiverView() {
 
       <p className="mt-5 text-base text-ink-soft">
         You can see where Sam is in the loop and what today needs. You cannot send
-        anything or change anything — this view is read-only by design, and Sam can
+        anything or change anything, this view is read-only by design, and Sam can
         turn it off any time.
       </p>
     </div>

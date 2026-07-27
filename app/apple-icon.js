@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
-// A single node from the loop, with the "act now" dot at the top — the
+// A single node from the loop, with the "act now" dot at the top, the
 // instrument mark, not a wellness logo.
 export default function AppleIcon() {
   return new ImageResponse(

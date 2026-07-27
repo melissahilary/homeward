@@ -5,7 +5,7 @@ import CountdownTool from "@/components/CountdownTool";
 export const metadata = {
   title: "Refill countdown calculator",
   description:
-    "Enter your last fill date and days supply. See when to act — day 22, 27, 29 — and export the alerts to your calendar. Free, no email.",
+    "Enter your last fill date and days supply. See when to act, day 22, 27, 29, and export the alerts to your calendar. Free, no email.",
 };
 
 export default function CountdownPage() {

@@ -1,5 +1,5 @@
 // One SVG, five states. The loop the user has run fifty times, revealed as a
-// system — not a personal failing. Days 20–33, twelve nodes, three that break,
+// system, not a personal failing. Days 20–33, twelve nodes, three that break,
 // three that are rights, collapsing to three taps. Dark palette.
 
 const BASE = "#121210";

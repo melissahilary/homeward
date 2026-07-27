@@ -80,7 +80,7 @@ export default function DiagramDownload({ children, unbranded }) {
 
       <div className="mt-6 no-print">
         <p className="text-sm font-semibold uppercase tracking-wide text-ink-faint">
-          For a community post — no logo, no link
+          For a community post, no logo, no link
         </p>
         <div className="mt-2 flex flex-wrap gap-3">
           <button onClick={() => downloadPNG(unbrandedRef, "refill-loop")} className="btn btn-secondary !py-2.5 text-base">Unbranded PNG</button>

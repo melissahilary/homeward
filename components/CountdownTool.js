@@ -84,7 +84,7 @@ export default function CountdownTool() {
           </button>
           <p className="mt-3 text-sm text-ink-faint">
             Drops the day 22, 27, and 29 alerts into the calendar you already
-            check. Not medical advice — a countdown you can run yourself.
+            check. Not medical advice, a countdown you can run yourself.
           </p>
         </div>
       )}

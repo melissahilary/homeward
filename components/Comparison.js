@@ -1,7 +1,7 @@
 import { COMPARISON } from "@/lib/site";
 
 // One table, one location. It teaches the reader to judge the category on the
-// dimension where we win — recorded transfer completion — without naming a
+// dimension where we win, recorded transfer completion, without naming a
 // competitor, because their real alternative is an afternoon on the phone.
 export default function Comparison() {
   return (

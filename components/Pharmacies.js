@@ -5,7 +5,7 @@ import OutcomeTap from "./OutcomeTap";
 import { PREDICTIONS, DEMO_METRO, DEMO_DRUG } from "@/lib/predictions";
 
 // Reciprocity gate: you cannot get a ranked recommendation without reporting
-// the outcome of your last one. Not a penalty — the mechanism. Waze cannot
+// the outcome of your last one. Not a penalty, the mechanism. Waze cannot
 // route a driver who is not driving.
 export default function Pharmacies() {
   const [unlocked, setUnlocked] = useState(false);
@@ -64,7 +64,7 @@ export default function Pharmacies() {
       </ol>
       <p className="mt-6 max-w-measure text-sm text-ink-faint">
         Every recommendation shows its sample size and its reasoning, always. A
-        competitor gives you a phone book. This gives you a probability — and it
+        competitor gives you a phone book. This gives you a probability, and it
         only exists because patients report back.
       </p>
     </div>

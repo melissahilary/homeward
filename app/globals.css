@@ -21,7 +21,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Visible focus states — accessibility is the product demo. */
+/* Visible focus states, accessibility is the product demo. */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -46,7 +46,7 @@ summary:focus-visible,
 }
 
 @layer components {
-  /* Primary action — the one accent: a bright warm fill on the dark base. */
+  /* Primary action, the one accent: a bright warm fill on the dark base. */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -92,7 +92,7 @@ summary:focus-visible,
 
 /* ---- The choreography hero ----
    Five discrete sections, each animates once on entry (IntersectionObserver
-   adds .is-in). No scroll-jacking, no pinning — the user owns the scroll.
+   adds .is-in). No scroll-jacking, no pinning, the user owns the scroll.
    Every frame is a valid stopping point. */
 .choreo-frame {
   opacity: 0;
@@ -153,7 +153,7 @@ summary:focus-visible,
   }
 }
 
-/* No motion. Honor the preference and go further — we omit it anyway. */
+/* No motion. Honor the preference and go further, we omit it anyway. */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;

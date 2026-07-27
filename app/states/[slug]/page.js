@@ -12,7 +12,7 @@ export function generateMetadata({ params }) {
   const s = getState(params.slug);
   if (!s) return { title: "State not found" };
   return {
-    title: `${s.name} — Schedule II refill rules`,
+    title: `${s.name}, Schedule II refill rules`,
     description: `Schedule II transfer, expiration, and telemedicine rules for ${s.name}. ${s.verified ? "Verified." : "Verification in progress."}`,
   };
 }

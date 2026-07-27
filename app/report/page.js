@@ -20,7 +20,7 @@ export default function ReportPage() {
           </h1>
           <p className="mt-4 text-lg text-ink-soft">
             You just tried to fill or transfer somewhere. One tap records what
-            happened. No one else holds this — it exists only because patients
+            happened. No one else holds this, it exists only because patients
             report back. It is what turns a phone book into a probability.
           </p>
         </div>

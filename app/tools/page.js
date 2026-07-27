@@ -9,11 +9,11 @@ export const metadata = {
 };
 
 const TOOLS = [
-  { href: "/tools/countdown", name: "Refill countdown calculator", body: "Enter your last fill date and days supply. See exactly when to act — day 22, 27, 29 — and how many days are left." },
+  { href: "/tools/countdown", name: "Refill countdown calculator", body: "Enter your last fill date and days supply. See exactly when to act, day 22, 27, 29, and how many days are left." },
   { href: "/tools/state-rules", name: "State rules lookup", body: "Pick your state to see transfer, expiration, and telemedicine rules, honestly flagged as verified or not." },
   { href: "/tools/message", name: "Message generator", body: "Fill four fields and get a ready-to-send message: prescriber request, transfer, partial fill, or stock inquiry." },
   { href: "/tools/calendar", name: "Calendar export", body: "Drop the day 22, 27, and 29 alerts into the calendar you already check, as a plain .ics file." },
-  { href: "/report", name: "Report an outcome", body: "One tap after a fill or transfer — filled, out of stock, or wrongly refused. It builds the map of which counter works." },
+  { href: "/report", name: "Report an outcome", body: "One tap after a fill or transfer, filled, out of stock, or wrongly refused. It builds the map of which counter works." },
 ];
 
 export default function ToolsPage() {
@@ -27,7 +27,7 @@ export default function ToolsPage() {
           </h1>
           <p className="mt-4 text-lg text-ink-soft">
             No login. No email. No account. These work whether or not you ever
-            sign up — that is the point.
+            sign up, that is the point.
           </p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">

@@ -10,7 +10,7 @@ export const metadata = {
     "One screen, one question: what do I do today. A preview of the authenticated view.",
 };
 
-// One screen answers one question — what do I do today. Demo state: day 24.
+// One screen answers one question, what do I do today. Demo state: day 24.
 export default function TodayPage() {
   const prescriberMsg = MESSAGES.items.find((m) => m.slug === "prescriber-request");
 

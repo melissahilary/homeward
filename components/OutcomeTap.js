@@ -9,7 +9,7 @@ const TONE = {
   expired: "border-expired text-expired",
 };
 
-// The first screen. One question, one tap, captured at the emotional peak —
+// The first screen. One question, one tap, captured at the emotional peak, 
 // filled, out of stock, or wrongly refused. This is the whole data engine.
 export default function OutcomeTap({ onReported }) {
   const [pharmacy, setPharmacy] = useState("");
@@ -22,7 +22,7 @@ export default function OutcomeTap({ onReported }) {
         <p className="text-lg font-semibold text-ink">Reported: {o.label}.</p>
         <p className="mt-2 text-base text-ink-soft">
           Thank you. That one tap sharpens the map for the next person on your
-          loop — and it is what unlocks your own ranked recommendations.
+          loop, and it is what unlocks your own ranked recommendations.
         </p>
         <button
           onClick={() => setChoice(null)}
@@ -64,8 +64,8 @@ export default function OutcomeTap({ onReported }) {
         ))}
       </div>
       <p className="mt-4 text-sm text-ink-faint">
-        In the app this fires as one text within two hours of pickup — the moment
-        of relief or fury — never a survey, never a scheduled form.
+        In the app this fires as one text within two hours of pickup, the moment
+        of relief or fury, never a survey, never a scheduled form.
       </p>
     </div>
   );

@@ -20,7 +20,7 @@ export default function CaregiverPage() {
           </h1>
           <p className="mt-4 text-lg text-ink-soft">
             Spouses and parents already run this loop by hand. Caregiver access
-            gives them a read-only view — where the cycle is, what today needs —
+            gives them a read-only view, where the cycle is, what today needs, 
             without any ability to send or change anything. Below is what they
             see.
           </p>

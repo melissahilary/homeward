@@ -19,8 +19,8 @@ const mono = JetBrains_Mono({
 export const metadata = {
   metadataBase: new URL("https://daykeep.app"),
   title: {
-    default: `${BRAND.name} — Schedule II has no refills`,
-    template: `%s — ${BRAND.name}`,
+    default: `${BRAND.name}, Schedule II has no refills`,
+    template: `%s, ${BRAND.name}`,
   },
   description:
     "The coordination layer for the monthly Schedule II loop. The timing, the paperwork, the transfer. For adults who already have a script.",

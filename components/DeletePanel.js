@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { DELETE } from "@/lib/legal";
 
-// Working self-service actions — not an email address. Client-side demo:
+// Working self-service actions, not an email address. Client-side demo:
 // each action confirms in place.
 export default function DeletePanel() {
   const [doneIndex, setDoneIndex] = useState(null);

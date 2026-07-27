@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { DATASETS } from "@/lib/predictions";
 
-// Internal strategy page — kept for reference, kept off customer surfaces.
+// Internal strategy page, kept for reference, kept off customer surfaces.
 export const metadata = {
   title: "How the map is built",
   description:
@@ -12,9 +12,9 @@ export const metadata = {
 };
 
 const MECHANICS = [
-  { h: "Reciprocity gate", body: "You cannot get a ranked recommendation without reporting the outcome of your last one. Not a penalty — the mechanism. Waze cannot route a driver who is not driving." },
+  { h: "Reciprocity gate", body: "You cannot get a ranked recommendation without reporting the outcome of your last one. Not a penalty, the mechanism. Waze cannot route a driver who is not driving." },
   { h: "Capture at the emotional peak", body: "One text within two hours of pickup, at the moment of relief or fury. Filled, out of stock, wrongly refused. Never a survey, never a scheduled form." },
-  { h: "Free tools as a sensor network", body: "The countdown calculator collects drug, strength, fill date, and ZIP from people who never sign up. That is the demand map — it picks the launch metro instead of us guessing." },
+  { h: "Free tools as a sensor network", body: "The countdown calculator collects drug, strength, fill date, and ZIP from people who never sign up. That is the demand map, it picks the launch metro instead of us guessing." },
   { h: "Visible density", body: "Every recommendation shows its sample size. Forty-seven reports, ninety days. You see the asset growing, and what leaving would cost." },
   { h: "Metro concentration", body: "Four hundred users in one metro beats four thousand scattered. The first is a working prediction engine; the second is a phone book with a good logo." },
 ];
@@ -30,7 +30,7 @@ export default function TheMapPage() {
           </h1>
           <p className="mt-4 text-lg text-ink-soft">
             Anyone can copy the charter, the templates, and the diagram. None of
-            that is the product. The product is attempt history — and it exists
+            that is the product. The product is attempt history, and it exists
             nowhere to be scraped or bought.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function TheMapPage() {
         <section className="mt-12 max-w-measure rounded-xl border-2 border-ink bg-white p-6">
           <h2 className="text-xl font-semibold text-ink">The one number that wins</h2>
           <p className="mt-3 text-lg text-ink-soft">
-            Not signups. Not revenue. <span className="font-medium text-ink">Contribution rate</span> — the
+            Not signups. Not revenue. <span className="font-medium text-ink">Contribution rate</span>, the
             share of active cycles that end in a reported outcome. Above 60%, the
             map outpaces anything anyone can buy. Below 40%, it is a phone book,
             and the charter alone will not save it.

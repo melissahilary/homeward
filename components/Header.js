@@ -2,7 +2,7 @@ import Link from "next/link";
 import { BRAND } from "@/lib/site";
 
 // Nav is for recognition. "How It Works" anchors to the diagram; we never
-// call it "The Loop" here — vocabulary is taught in body copy, not the nav.
+// call it "The Loop" here, vocabulary is taught in body copy, not the nav.
 const NAV = [
   { href: "/how-it-works", label: "How It Works" },
   { href: "/tools", label: "Free Tools" },
@@ -18,7 +18,7 @@ export default function Header() {
           {BRAND.wordmark}
         </Link>
 
-        {/* Middle — recognition labels. */}
+        {/* Middle, recognition labels. */}
         <nav className="hidden md:block">
           <ul className="flex items-center gap-7">
             {NAV.map((n) => (
@@ -31,7 +31,7 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Right — log in, then the one action. */}
+        {/* Right, log in, then the one action. */}
         <div className="flex items-center gap-4 md:gap-6">
           <Link href="/account" className="text-base text-ink-soft hover:text-ink">
             Log in

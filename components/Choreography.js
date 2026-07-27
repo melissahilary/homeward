@@ -6,7 +6,7 @@ import FrameSVG from "./FrameSVG";
 import { POSITIONING } from "@/lib/site";
 
 // Five discrete frames. Each animates once on entry via IntersectionObserver.
-// No scroll-jacking, no pinning — the user owns the scroll, and every frame is
+// No scroll-jacking, no pinning, the user owns the scroll, and every frame is
 // a valid stopping point. prefers-reduced-motion renders the final frame,
 // static, at the top: the complete state, not a degraded one.
 const FRAMES = [
@@ -62,7 +62,7 @@ function Frame({ data, isFinal, isFirst }) {
 
         {isFinal && (
           <div className="mt-12 flex flex-wrap items-center gap-5">
-            <Link href="/signup" className="btn text-lg">Get started — $99 a year</Link>
+            <Link href="/signup" className="btn text-lg">Get started, $99 a year</Link>
             <Link href="/how-it-works" className="link text-lg">See how it works</Link>
           </div>
         )}
@@ -103,7 +103,7 @@ export default function Choreography() {
             <div className="min-w-[720px]"><FrameSVG frame={5} /></div>
           </div>
           <div className="mt-12 flex flex-wrap items-center gap-5">
-            <Link href="/signup" className="btn text-lg">Get started — $99 a year</Link>
+            <Link href="/signup" className="btn text-lg">Get started, $99 a year</Link>
             <Link href="/how-it-works" className="link text-lg">See how it works</Link>
           </div>
         </div>

@@ -35,13 +35,13 @@ export default function OurRulesPage() {
           Our Rules
         </h1>
 
-        {/* One — the direct answer. */}
+        {/* One, the direct answer. */}
         <section className="mt-10 max-w-measure">
           <p className="text-2xl font-semibold text-ink md:text-3xl">
             You pay us $99 a year. That is our only revenue.
           </p>
           <p className="mt-4 text-lg text-ink-soft">
-            We have no revenue yet. This is a commitment, not a report — here is
+            We have no revenue yet. This is a commitment, not a report. Here is
             what we will and will not accept.
           </p>
           <dl className="mt-6 divide-y divide-line rounded-xl border border-line bg-white">
@@ -54,13 +54,21 @@ export default function OurRulesPage() {
               </div>
             ))}
           </dl>
+          <p className="mt-4 text-lg text-ink">
+            As of July 2026 we have taken zero dollars from pharmacies, PBMs, or
+            manufacturers. We publish this every January.
+          </p>
+          <p className="mt-3 text-lg text-ink-soft">
+            We are building an independent measure of medication access and will
+            publish it free when the data is good enough to trust.
+          </p>
         </section>
 
-        {/* Two — what we turned down. */}
+        {/* Two, what we turned down. */}
         <section className="mt-14 max-w-measure border-t border-line pt-10">
           <h2 className="text-xl font-semibold text-ink">What we turned down</h2>
           <p className="mt-3 text-lg text-ink-soft">
-            When someone on the supply side offers us money, we log it here —
+            When someone on the supply side offers us money, we log it here, 
             dated, with the amount and who made it. The log is empty today. The
             first offer we decline will appear below.
           </p>
@@ -69,7 +77,7 @@ export default function OurRulesPage() {
               Example of an entry
             </p>
             <p className="mt-2 text-lg text-ink">
-              March 2027 — a regional pharmacy group offered $4,000 a month for
+              March 2027, a regional pharmacy group offered $4,000 a month for
               preferred placement in search results. Declined.
             </p>
           </div>
@@ -79,7 +87,7 @@ export default function OurRulesPage() {
           </p>
         </section>
 
-        {/* Three — the five rules. */}
+        {/* Three, the five rules. */}
         <section className="mt-14 max-w-measure border-t border-line pt-10">
           <h2 className="text-xl font-semibold text-ink">The five rules</h2>
           <ul className="mt-5 space-y-4">
@@ -92,7 +100,7 @@ export default function OurRulesPage() {
           </ul>
         </section>
 
-        {/* Four — why. */}
+        {/* Four, why. */}
         <section className="mt-14 max-w-measure border-t border-line pt-10">
           <h2 className="text-xl font-semibold text-ink">Why</h2>
           <p className="mt-4 text-xl leading-relaxed text-ink">
@@ -106,7 +114,7 @@ export default function OurRulesPage() {
           </p>
         </section>
 
-        {/* Five — hold us to it. */}
+        {/* Five, hold us to it. */}
         <section className="mt-14 max-w-measure border-t border-line pt-10">
           <h2 className="text-xl font-semibold text-ink">Hold us to it</h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-soft">

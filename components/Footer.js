@@ -75,7 +75,7 @@ const COLUMNS = [
 export default function Footer() {
   return (
     <footer className="mt-24 border-t border-line">
-      {/* Standalone Consumer Health Data Privacy link — separate and distinct,
+      {/* Standalone Consumer Health Data Privacy link, separate and distinct,
           on every page including the homepage, per My Health My Data. */}
       <div className="border-b border-line bg-panel">
         <div className="mx-auto max-w-content px-5 py-4 md:px-8">

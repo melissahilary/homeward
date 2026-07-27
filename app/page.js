@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        {/* The choreography — the whole product in five frames, and the one
+        {/* The choreography, the whole product in five frames, and the one
             place the motion budget is spent. */}
         <div id="loop">
           <Choreography />
@@ -38,7 +38,7 @@ export default function Home() {
               Basis: {TEMPLATE.citation}
             </p>
             <Link href="/messages" className="link mt-5 inline-block text-lg">
-              The full message library — transfer, partial fill, stock inquiry
+              The full message library, transfer, partial fill, stock inquiry
             </Link>
           </div>
         </Section>
@@ -60,7 +60,7 @@ export default function Home() {
           </Link>
         </Section>
 
-        {/* What we never do — five standards, stated as standards. */}
+        {/* What we never do, five standards, stated as standards. */}
         <Section id="never-do" className="border-t border-line bg-panel">
           <SectionHead title={NEVER_DO.title} />
           <ul className="mt-8 max-w-measure space-y-4">
@@ -73,7 +73,7 @@ export default function Home() {
           </ul>
           <div className="mt-6">
             <Link href="/our-rules" className="link text-lg">
-              Our Rules — the revenue sources and the offers we turn down
+              Our Rules, the revenue sources and the offers we turn down
             </Link>
           </div>
         </Section>
@@ -97,7 +97,7 @@ export default function Home() {
           </p>
         </Section>
 
-        {/* The transfer map — the asset a competitor cannot copy. */}
+        {/* The transfer map, the asset a competitor cannot copy. */}
         <Section id="map" className="border-t border-line">
           <SectionHead
             title="Which counter actually works"
@@ -108,7 +108,7 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* Comparison — after the diagram, before pricing. One table, one place. */}
+        {/* Comparison, after the diagram, before pricing. One table, one place. */}
         <Section id="comparison" className="border-t border-line bg-panel">
           <SectionHead title={COMPARISON.title} />
           <div className="mt-8">
@@ -121,7 +121,7 @@ export default function Home() {
         <Section id="pricing">
           <SectionHead title="The price" />
           <div className="mt-8 grid max-w-3xl grid-cols-1 gap-5 sm:grid-cols-2">
-            {/* Yearly — visually dominant. */}
+            {/* Yearly, visually dominant. */}
             <div className="rounded-xl border-2 border-ink bg-white p-7">
               <div className="flex items-baseline gap-2">
                 <span className="text-[2.75rem] font-semibold leading-none text-ink">
@@ -140,7 +140,7 @@ export default function Home() {
                 Get started
               </Link>
             </div>
-            {/* Monthly — plain, no shaming, no badge. */}
+            {/* Monthly, plain, no shaming, no badge. */}
             <div className="rounded-xl border border-line bg-white p-7">
               <div className="flex items-baseline gap-2">
                 <span className="text-[2.75rem] font-semibold leading-none text-ink">

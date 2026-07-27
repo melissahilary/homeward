@@ -51,7 +51,7 @@ export default function DiagramPage() {
             {[
               "Read each community's rules in full before posting anything.",
               "Message the moderators first. Say exactly what you are doing and ask.",
-              "Post the diagram with no logo, no link, no brand — the unbranded file above.",
+              "Post the diagram with no logo, no link, no brand, the unbranded file above.",
               "Build comment history for two weeks before you post anything of your own.",
               "Have a second and third community ready. One ban should not end anything.",
             ].map((t, i) => (

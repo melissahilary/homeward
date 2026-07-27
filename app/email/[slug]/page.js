@@ -11,7 +11,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const e = getEmail(params.slug);
   if (!e) return { title: "Not found" };
-  return { title: `${e.name} — email preview`, description: e.subject };
+  return { title: `${e.name}, email preview`, description: e.subject };
 }
 
 export default function EmailPreviewPage({ params }) {
