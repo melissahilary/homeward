@@ -29,6 +29,7 @@ const COLUMNS = [
       { label: "Which counter works", href: "/pharmacies" },
       { label: "Report an outcome", href: "/report" },
       { label: "How the map is built", href: "/the-map" },
+      { label: "Methodology", href: "/methodology" },
       { label: "Caregiver access", href: "/caregiver" },
       { label: "Email previews", href: "/email" },
     ],

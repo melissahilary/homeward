@@ -109,9 +109,11 @@ export default function SignupForm() {
             className="mt-1 h-4 w-4 shrink-0"
           />
           <span>
-            <span className="font-medium">Optional.</span> I consent to sharing my
-            de-identified fill outcomes to build the pharmacy reliability map. This
-            is separate from the consent above, and never required.
+            <span className="font-medium">Optional.</span> I consent to Daykeep
+            using my de-identified fill outcomes to build the pharmacy reliability
+            map, and to Daykeep publishing anonymized, aggregated statistics about
+            medication access. This is separate from the consent above, and never
+            required.
           </span>
         </label>
       </fieldset>

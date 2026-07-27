@@ -20,6 +20,7 @@ const STATIC = [
   "/report",
   "/pharmacies",
   "/the-map",
+  "/methodology",
   "/caregiver",
   "/email",
   "/messages",
