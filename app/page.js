@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CopyBlock from "@/components/CopyBlock";
 import Choreography from "@/components/Choreography";
+import TrustStrip from "@/components/TrustStrip";
+import StickyCTA from "@/components/StickyCTA";
 import PhoneWalkthrough from "@/components/PhoneWalkthrough";
 import Comparison from "@/components/Comparison";
 import {
@@ -26,8 +28,11 @@ export default function Home() {
           <Choreography />
         </div>
 
+        {/* Trust stack, editorial confidence, our currency is neutrality. */}
+        <TrustStrip />
+
         {/* The free artifact, immediately. No email required. */}
-        <Section id="template" className="border-t border-line bg-panel">
+        <Section id="template">
           <SectionHead
             eyebrow="Free, no account"
             title={TEMPLATE.title}
@@ -192,6 +197,7 @@ export default function Home() {
         </Section>
       </main>
       <Footer />
+      <StickyCTA />
     </>
   );
 }
