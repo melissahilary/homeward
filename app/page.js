@@ -72,8 +72,8 @@ export default function Home() {
             ))}
           </ul>
           <div className="mt-6">
-            <Link href="/charter" className="link text-lg">
-              Read the full charter
+            <Link href="/our-rules" className="link text-lg">
+              Our Rules — the revenue sources and the offers we turn down
             </Link>
           </div>
         </Section>

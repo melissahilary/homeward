@@ -3,10 +3,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { DATASETS } from "@/lib/predictions";
 
+// Internal strategy page — kept for reference, kept off customer surfaces.
 export const metadata = {
   title: "How the map is built",
   description:
-    "Attempt history that exists nowhere else. Built by patients reporting real outcomes, gated by reciprocity, measured by one ratio: contribution rate.",
+    "Internal reference on how the reliability data compounds.",
+  robots: { index: false, follow: false },
 };
 
 const MECHANICS = [

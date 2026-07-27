@@ -28,10 +28,8 @@ export default function ReportPage() {
           <OutcomeTap />
         </div>
         <p className="mt-6 max-w-measure text-lg text-ink-soft">
-          See how the reports become a ranked map:{" "}
-          <Link href="/pharmacies" className="link">the prediction engine</Link>,
-          and{" "}
-          <Link href="/the-map" className="link">why it cannot be bought</Link>.
+          See how the reports become a ranked list:{" "}
+          <Link href="/pharmacies" className="link">which counter actually works</Link>.
         </p>
       </main>
       <Footer />

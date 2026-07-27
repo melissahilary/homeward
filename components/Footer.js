@@ -10,7 +10,7 @@ const COLUMNS = [
       { label: "The diagram", href: "/diagram" },
       { label: "About", href: "/about" },
       { label: "Who we serve", href: "/who-we-serve" },
-      { label: "The charter", href: "/charter" },
+      { label: "Our Rules", href: "/our-rules" },
       { label: "Pricing", href: "/#pricing" },
     ],
   },
@@ -24,11 +24,10 @@ const COLUMNS = [
     ],
   },
   {
-    title: "The map",
+    title: "Pharmacy reliability",
     links: [
       { label: "Which counter works", href: "/pharmacies" },
       { label: "Report an outcome", href: "/report" },
-      { label: "How the map is built", href: "/the-map" },
       { label: "Methodology", href: "/methodology" },
       { label: "Caregiver access", href: "/caregiver" },
       { label: "Email previews", href: "/email" },
