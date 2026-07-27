@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { BRAND } from "@/lib/site";
 
+// Nav is for recognition. "How It Works" anchors to the diagram; we never
+// call it "The Loop" here — vocabulary is taught in body copy, not the nav.
 const NAV = [
-  { href: "/how-it-works", label: "How it works" },
-  { href: "/tools", label: "Free tools" },
-  { href: "/diagram", label: "The diagram" },
+  { href: "/how-it-works", label: "How It Works" },
+  { href: "/tools", label: "Free Tools" },
   { href: "/#pricing", label: "Pricing" },
 ];
 
@@ -15,8 +16,10 @@ export default function Header() {
         <Link href="/" className="text-lg font-semibold tracking-tight text-ink">
           {BRAND.wordmark}
         </Link>
-        <nav className="flex items-center gap-4 md:gap-6">
-          <ul className="hidden items-center gap-5 md:flex">
+
+        {/* Middle — recognition labels. */}
+        <nav className="hidden md:block">
+          <ul className="flex items-center gap-7">
             {NAV.map((n) => (
               <li key={n.href}>
                 <Link href={n.href} className="text-base text-ink-soft hover:text-ink">
@@ -25,10 +28,17 @@ export default function Header() {
               </li>
             ))}
           </ul>
+        </nav>
+
+        {/* Right — log in, then the one action. */}
+        <div className="flex items-center gap-4 md:gap-6">
+          <Link href="/account" className="text-base text-ink-soft hover:text-ink">
+            Log in
+          </Link>
           <Link href="/signup" className="btn !px-4 !py-2 text-base">
             Get started
           </Link>
-        </nav>
+        </div>
       </div>
     </header>
   );
