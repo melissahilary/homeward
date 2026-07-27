@@ -135,6 +135,40 @@ summary:focus-visible,
   opacity: 1;
 }
 
+/* ---- Phone walkthrough: texting motion, CSS only ---- */
+@keyframes dk-dot {
+  0%, 60%, 100% { opacity: 0.25; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-2px); }
+}
+.dk-typing-dot {
+  animation: dk-dot 1.2s infinite ease-in-out;
+}
+.dk-typing-dot:nth-child(2) { animation-delay: 0.15s; }
+.dk-typing-dot:nth-child(3) { animation-delay: 0.30s; }
+
+@keyframes dk-bubble-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.dk-bubble-in {
+  animation: dk-bubble-in 0.34s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+@keyframes dk-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.dk-fade-in {
+  animation: dk-fade-in 0.3s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dk-typing-dot,
+  .dk-bubble-in,
+  .dk-fade-in {
+    animation: none !important;
+  }
+}
+
 /* Print: drop the site chrome and invert to ink-on-white so a page hands
    cleanly to a doctor or a PDF (the dark UI is for screens, not paper). */
 @media print {
