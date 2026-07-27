@@ -89,6 +89,18 @@ summary:focus-visible,
   }
 }
 
+/* Print: drop the site chrome so a page hands cleanly to a doctor or a PDF. */
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}
+
 /* No motion. Honor the preference and go further — we omit it anyway. */
 @media (prefers-reduced-motion: reduce) {
   * {

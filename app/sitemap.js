@@ -1,14 +1,28 @@
+import { STATES } from "@/lib/states";
+import { RIGHTS_LONG } from "@/lib/site";
+
 const BASE = "https://daykeep.app";
 
-const ROUTES = [
+const STATIC = [
   "",
+  "/how-it-works",
+  "/about",
+  "/diagram",
   "/signup",
+  "/tools",
+  "/tools/countdown",
+  "/tools/state-rules",
+  "/tools/message",
+  "/tools/calendar",
   "/messages",
   "/rights",
+  "/states",
   "/glossary",
+  "/not-for",
   "/today",
   "/account",
-  "/support",
+  "/help",
+  "/contact",
   "/safety",
   "/charter",
   "/health-data",
@@ -17,10 +31,16 @@ const ROUTES = [
   "/delete",
   "/accessibility",
   "/security",
+  "/changelog",
 ];
 
 export default function sitemap() {
-  return ROUTES.map((path) => ({
+  const paths = [
+    ...STATIC,
+    ...RIGHTS_LONG.items.map((r) => `/rights/${r.slug}`),
+    ...STATES.map((s) => `/states/${s.slug}`),
+  ];
+  return paths.map((path) => ({
     url: `${BASE}${path}`,
     changeFrequency: "monthly",
     priority: path === "" ? 1 : 0.7,

@@ -27,9 +27,12 @@ export default function Home() {
           <p className="mt-6 max-w-measure text-xl text-ink-soft">
             {HERO.subhead}
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap items-center gap-5">
             <Link href="/signup" className="btn text-lg">
               {HERO.cta}
+            </Link>
+            <Link href="/diagram" className="link text-lg">
+              See the loop, drawn
             </Link>
           </div>
         </section>
@@ -118,27 +121,48 @@ export default function Home() {
 
         {/* Pricing, then FAQ. */}
         <Section id="pricing">
-          <SectionHead title="One price. One tier." />
-          <div className="mt-8 max-w-measure rounded-xl border border-line bg-white p-6">
-            <div className="flex items-baseline gap-3">
-              <span className="text-3xl font-semibold text-ink">{PRICING.year}</span>
-              <span className="text-lg text-ink-soft">/ year</span>
+          <SectionHead
+            title="One tier. Pay yearly or monthly."
+            lede="Same product either way. Yearly is cheaper; monthly is here so an upfront charge never keeps anyone out."
+          />
+          <div className="mt-8 grid max-w-3xl grid-cols-1 gap-5 sm:grid-cols-2">
+            <div className="rounded-xl border-2 border-ink bg-white p-6">
+              <p className="text-sm font-semibold uppercase tracking-wide text-ink-faint">
+                Yearly · best value
+              </p>
+              <div className="mt-2 flex items-baseline gap-2">
+                <span className="text-3xl font-semibold text-ink">{PRICING.year}</span>
+                <span className="text-lg text-ink-soft">/ year</span>
+              </div>
+              <p className="mt-1 text-base text-ink-soft">
+                {PRICING.perMonth} a month, charged once.
+              </p>
+              <Link href="/signup" className="btn btn-block mt-5 text-lg">
+                {HERO.cta}
+              </Link>
             </div>
-            <p className="mt-1 text-base text-ink-soft">
-              {PRICING.perMonth} a month, charged once.
-            </p>
-            <ul className="mt-5 space-y-2.5 text-base text-ink">
-              <li>We email you 30 days before renewal, and again 7 days before.</li>
-              <li>{PRICING.refundDays}-day refund, one click in settings, no conversation.</li>
-              <li>One tier. No good-better-best.</li>
-            </ul>
-            <p className="mt-5 border-t border-line pt-4 text-base text-ink-soft">
-              One missed workday costs more than the year.
-            </p>
-            <Link href="/signup" className="btn btn-block mt-5 text-lg">
-              {HERO.cta}
-            </Link>
+            <div className="rounded-xl border border-line bg-white p-6">
+              <p className="text-sm font-semibold uppercase tracking-wide text-ink-faint">
+                Monthly
+              </p>
+              <div className="mt-2 flex items-baseline gap-2">
+                <span className="text-3xl font-semibold text-ink">{PRICING.monthly}</span>
+                <span className="text-lg text-ink-soft">/ month</span>
+              </div>
+              <p className="mt-1 text-base text-ink-soft">Cancel any time, one click.</p>
+              <Link href="/signup" className="btn btn-secondary btn-block mt-5 text-lg">
+                Start monthly
+              </Link>
+            </div>
           </div>
+          <ul className="mt-6 max-w-measure space-y-2.5 text-base text-ink">
+            <li>We email you 30 days before renewal, and again 7 days before.</li>
+            <li>{PRICING.refundDays}-day refund, one click in settings, no conversation.</li>
+            <li>One product. No good-better-best.</li>
+          </ul>
+          <p className="mt-5 max-w-measure text-base text-ink-soft">
+            One missed workday costs more than the year.
+          </p>
         </Section>
 
         <Section id="faq" className="border-t border-line bg-panel">

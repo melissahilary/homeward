@@ -5,29 +5,56 @@ const COLUMNS = [
   {
     title: "Product",
     links: [
-      { label: "The message library", href: "/messages" },
-      { label: "What your script allows", href: "/rights" },
-      { label: "Glossary", href: "/glossary" },
+      { label: "How it works", href: "/how-it-works" },
+      { label: "The diagram", href: "/diagram" },
+      { label: "About", href: "/about" },
+      { label: "The charter", href: "/charter" },
       { label: "Pricing", href: "/#pricing" },
-      { label: "Get started", href: "/signup" },
+    ],
+  },
+  {
+    title: "Free tools",
+    links: [
+      { label: "Refill countdown", href: "/tools/countdown" },
+      { label: "State rules lookup", href: "/tools/state-rules" },
+      { label: "Message generator", href: "/tools/message" },
+      { label: "Calendar export", href: "/tools/calendar" },
+    ],
+  },
+  {
+    title: "Library",
+    links: [
+      { label: "State rules", href: "/states" },
+      { label: "Your three rights", href: "/rights" },
+      { label: "Message library", href: "/messages" },
+      { label: "Glossary", href: "/glossary" },
+      { label: "Who this is not for", href: "/not-for" },
     ],
   },
   {
     title: "Safety & support",
     links: [
       { label: "If you cannot get your medication", href: "/safety" },
-      { label: "Support", href: "/support" },
-      { label: "Accessibility", href: "/accessibility" },
-      { label: "Security", href: "/security" },
+      { label: "Help center", href: "/help" },
+      { label: "Contact", href: "/contact" },
+      { label: "Account & billing", href: "/account" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "What we never do", href: "/charter" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/terms" },
       { label: "Delete your data", href: "/delete" },
+      { label: "Accessibility", href: "/accessibility" },
+    ],
+  },
+  {
+    title: "Operational",
+    links: [
+      { label: "Security", href: "/security" },
+      { label: "Changelog", href: "/changelog" },
+      { label: "Sitemap", href: "/sitemap.xml" },
     ],
   },
 ];
@@ -35,8 +62,8 @@ const COLUMNS = [
 export default function Footer() {
   return (
     <footer className="mt-24 border-t border-line">
-      {/* Standalone Consumer Health Data Privacy link — a separate, distinct
-          homepage link, as Washington's My Health My Data Act requires. */}
+      {/* Standalone Consumer Health Data Privacy link — separate and distinct,
+          on every page including the homepage, per My Health My Data. */}
       <div className="border-b border-line bg-panel">
         <div className="mx-auto max-w-content px-5 py-4 md:px-8">
           <Link href="/health-data" className="link text-base font-medium">
@@ -46,15 +73,7 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto max-w-content px-5 py-12 md:px-8">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
-          <div className="max-w-xs">
-            <p className="text-lg font-semibold text-ink">{BRAND.wordmark}</p>
-            <p className="mt-2 text-base text-ink-soft">
-              A coordination tool for the monthly Schedule II cycle. Not a
-              clinical service. We do not diagnose, treat, or send anything for
-              you.
-            </p>
-          </div>
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
           {COLUMNS.map((col) => (
             <nav key={col.title}>
               <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-ink-faint">
@@ -73,7 +92,15 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col gap-2 border-t border-line pt-6 text-sm text-ink-faint md:flex-row md:justify-between">
+        <div className="mt-10 flex flex-col gap-3 border-t border-line pt-6 md:flex-row md:items-center md:justify-between">
+          <p className="text-lg font-semibold text-ink">{BRAND.wordmark}</p>
+          <p className="max-w-xl text-sm text-ink-faint">
+            A coordination tool for the monthly Schedule II cycle. Not a clinical
+            service. We do not diagnose, treat, prescribe, dispense, or send
+            anything for you.
+          </p>
+        </div>
+        <div className="mt-4 flex flex-col gap-2 text-sm text-ink-faint md:flex-row md:justify-between">
           <p>© 2026 {BRAND.name}. Cash only. No third-party payers.</p>
           <p>Your health data coordinates your refill and nothing else.</p>
         </div>

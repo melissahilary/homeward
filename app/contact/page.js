@@ -3,19 +3,14 @@ import ContactForm from "@/components/ContactForm";
 import { SUPPORT } from "@/lib/site";
 
 export const metadata = {
-  title: "Support",
-  description:
-    "Self-service first, a real person within one business day, no chatbot.",
+  title: "Contact",
+  description: "One form. A real person within one business day. No chatbot.",
 };
 
-export default function SupportPage() {
+export default function ContactPage() {
   return (
-    <DocPage title={SUPPORT.title} intro={SUPPORT.intro}>
-      <div className="mt-8 max-w-measure space-y-3">
-        <p className="text-base text-ink">
-          <span className="font-medium">Response time. </span>
-          {SUPPORT.responseTime}
-        </p>
+    <DocPage title="Contact" intro={SUPPORT.responseTime}>
+      <div className="mt-4 max-w-measure">
         <p className="text-base text-ink-soft">
           <span className="font-medium text-ink">Data freshness. </span>
           {SUPPORT.freshness}
