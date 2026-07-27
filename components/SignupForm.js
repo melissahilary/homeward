@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { SIGNUP, PRICING } from "@/lib/site";
 
 // Four fields, one screen, no progress bar. Payment on the same screen.
-// Succeeds client-side; the button becomes a confirmation.
+// Consent is unbundled per My Health My Data: two separate, unchecked
+// boxes, neither buried in the terms. Succeeds client-side.
 export default function SignupForm() {
   const [done, setDone] = useState(false);
+  const [agreeTerms, setAgreeTerms] = useState(false);
+  const [consentHealth, setConsentHealth] = useState(false);
 
   if (done) {
     return (
@@ -51,6 +55,41 @@ export default function SignupForm() {
         ))}
       </div>
 
+      {/* Consent — separate, unchecked, unbundled. */}
+      <fieldset className="mt-6 space-y-3 border-t border-line pt-5">
+        <legend className="sr-only">Consent</legend>
+        <label className="flex cursor-pointer items-start gap-3 text-base text-ink">
+          <input
+            type="checkbox"
+            checked={agreeTerms}
+            onChange={(e) => setAgreeTerms(e.target.checked)}
+            className="mt-1 h-4 w-4 shrink-0"
+          />
+          <span>
+            I agree to the{" "}
+            <Link href="/terms" className="link">Terms of Service</Link> and{" "}
+            <Link href="/privacy" className="link">Privacy Policy</Link>.
+          </span>
+        </label>
+        <label className="flex cursor-pointer items-start gap-3 text-base text-ink">
+          <input
+            type="checkbox"
+            checked={consentHealth}
+            onChange={(e) => setConsentHealth(e.target.checked)}
+            className="mt-1 h-4 w-4 shrink-0"
+          />
+          <span>
+            I consent to Daykeep collecting my medication and refill details and
+            using them only to run my cycle. I can withdraw this any time. See
+            the{" "}
+            <Link href="/health-data" className="link">
+              Consumer Health Data Privacy Policy
+            </Link>
+            .
+          </span>
+        </label>
+      </fieldset>
+
       <div className="mt-5 flex items-baseline justify-between border-t border-line pt-4">
         <span className="text-base text-ink-soft">Billed once a year</span>
         <span className="text-lg font-semibold text-ink">
@@ -59,7 +98,11 @@ export default function SignupForm() {
         </span>
       </div>
 
-      <button type="submit" className="btn btn-block mt-4">
+      <button
+        type="submit"
+        disabled={!agreeTerms || !consentHealth}
+        className="btn btn-block mt-4 disabled:cursor-not-allowed disabled:opacity-40"
+      >
         Start — {PRICING.year} / year
       </button>
       <p className="mt-3 text-sm text-ink-faint">

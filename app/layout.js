@@ -17,7 +17,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://refill.app"),
+  metadataBase: new URL("https://daykeep.app"),
   title: {
     default: `${BRAND.name} — Schedule II has no refills`,
     template: `%s — ${BRAND.name}`,

@@ -1,8 +1,8 @@
 {
-  "name": "refill",
+  "name": "daykeep",
   "version": "1.0.0",
   "private": true,
-  "description": "Refill — the coordination layer for the monthly Schedule II cycle",
+  "description": "Daykeep — the coordination layer for the monthly Schedule II cycle",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -46,6 +46,9 @@ export default function Home() {
             <p className="mt-3 font-mono text-sm text-ink-faint">
               Basis: {TEMPLATE.citation}
             </p>
+            <Link href="/messages" className="link mt-5 inline-block text-lg">
+              The full message library — transfer, partial fill, stock inquiry
+            </Link>
           </div>
         </Section>
 
@@ -61,6 +64,9 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <Link href="/rights" className="link mt-8 inline-block text-lg">
+            Read the three rights in full
+          </Link>
         </Section>
 
         {/* The twelve steps. */}
@@ -82,6 +88,12 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <p className="mt-6 max-w-measure text-lg text-ink-soft">
+            Out of medication right now?{" "}
+            <Link href="/safety" className="link">
+              Here is the safe path.
+            </Link>
+          </p>
         </Section>
 
         {/* What we never do — summary + link to the full charter. */}
