@@ -143,6 +143,13 @@ function Phone({ phase }) {
       }}
       aria-label="An iPhone showing three text messages across the month"
     >
+      {/* Titanium hardware buttons. Left: silent switch, volume up, volume
+          down. Right: side button. The tells that make it read as an iPhone. */}
+      <span aria-hidden="true" className="absolute -left-[2px] top-[104px] h-7 w-[3px] rounded-l-sm" style={{ background: "linear-gradient(90deg,#2c2c2f,#0a0a0b)" }} />
+      <span aria-hidden="true" className="absolute -left-[2px] top-[150px] h-12 w-[3px] rounded-l-sm" style={{ background: "linear-gradient(90deg,#2c2c2f,#0a0a0b)" }} />
+      <span aria-hidden="true" className="absolute -left-[2px] top-[210px] h-12 w-[3px] rounded-l-sm" style={{ background: "linear-gradient(90deg,#2c2c2f,#0a0a0b)" }} />
+      <span aria-hidden="true" className="absolute -right-[2px] top-[168px] h-16 w-[3px] rounded-r-sm" style={{ background: "linear-gradient(270deg,#2c2c2f,#0a0a0b)" }} />
+
       {/* Screen */}
       <div
         className="relative overflow-hidden"
@@ -177,8 +184,15 @@ function Phone({ phase }) {
           <span className="text-[13px] font-medium text-white">Daykeep</span>
         </div>
 
+        {/* Home indicator, the pill at the base of every modern iPhone. */}
+        <div
+          aria-hidden="true"
+          className="absolute bottom-[9px] left-1/2 z-20 -translate-x-1/2 rounded-full"
+          style={{ width: "116px", height: "5px", background: "rgba(255,255,255,0.55)" }}
+        />
+
         {/* Thread */}
-        <div className="flex flex-col gap-4 px-4 pb-10 pt-5">
+        <div className="flex flex-col gap-4 px-4 pb-14 pt-5">
           {BLOCKS.map((b, i) => {
             const p = phase[i];
             if (p === 0) return null;
