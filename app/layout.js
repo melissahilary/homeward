@@ -1,6 +1,7 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { BRAND } from "@/lib/site";
+import { SignupProvider } from "@/components/SignupDrawer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#FAFAF7",
+  themeColor: "#121210",
   width: "device-width",
   initialScale: 1,
 };
@@ -36,7 +37,9 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${mono.variable}`}>
-      <body className="bg-paper text-ink">{children}</body>
+      <body className="bg-paper text-ink">
+        <SignupProvider>{children}</SignupProvider>
+      </body>
     </html>
   );
 }

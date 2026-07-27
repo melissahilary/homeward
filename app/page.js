@@ -5,6 +5,7 @@ import CopyBlock from "@/components/CopyBlock";
 import Choreography from "@/components/Choreography";
 import TrustStrip from "@/components/TrustStrip";
 import StickyCTA from "@/components/StickyCTA";
+import { SignupButton } from "@/components/SignupDrawer";
 import PhoneWalkthrough from "@/components/PhoneWalkthrough";
 import Comparison from "@/components/Comparison";
 import {
@@ -146,9 +147,7 @@ export default function Home() {
                 We email you 30 days and 7 days before renewal. Thirty-day
                 refund, one click.
               </p>
-              <Link href="/signup" className="btn btn-block mt-6 text-lg">
-                Get started
-              </Link>
+              <SignupButton className="btn btn-block mt-6 text-lg">Get started</SignupButton>
             </div>
             {/* Monthly, plain, no shaming, no badge. */}
             <div className="rounded-xl border border-line bg-white p-7">
@@ -161,9 +160,7 @@ export default function Home() {
               <p className="mt-3 text-base text-ink-soft">
                 Cancel anytime, one click.
               </p>
-              <Link href="/signup" className="btn btn-secondary btn-block mt-6 text-lg">
-                Start monthly
-              </Link>
+              <SignupButton className="btn btn-secondary btn-block mt-6 text-lg">Start monthly</SignupButton>
             </div>
           </div>
         </Section>

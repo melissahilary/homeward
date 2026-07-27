@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { SignupButton } from "@/components/SignupDrawer";
 
 // The proven DTC pattern is a persistent CTA so a decided visitor never has to
 // hunt for the button. Kept quiet for a depleted audience: mobile only, and it
@@ -24,9 +24,7 @@ export default function StickyCTA() {
     >
       <div className="flex items-center justify-between gap-4 px-5 py-3">
         <span className="text-sm text-ink-soft">$99 a year. Cancel anytime.</span>
-        <Link href="/signup" className="btn !px-5 !py-2.5 text-base">
-          Get started
-        </Link>
+        <SignupButton className="btn !px-5 !py-2.5 text-base">Get started</SignupButton>
       </div>
     </div>
   );
