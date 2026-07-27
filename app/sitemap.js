@@ -29,6 +29,7 @@ const STATIC = [
   "/drugs",
   "/glossary",
   "/not-for",
+  "/login",
   "/today",
   "/account",
   "/help",

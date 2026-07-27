@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CopyBlock from "@/components/CopyBlock";
 import Choreography from "@/components/Choreography";
+import PhoneWalkthrough from "@/components/PhoneWalkthrough";
 import Comparison from "@/components/Comparison";
 import {
   TEMPLATE,
@@ -43,8 +44,12 @@ export default function Home() {
           </div>
         </Section>
 
+        {/* Section 4: the message walkthrough. The payoff, right after the
+            problem, while recognition is still active. */}
+        <PhoneWalkthrough />
+
         {/* The three rights. */}
-        <Section id="rights">
+        <Section id="rights" className="border-t border-line">
           <SectionHead title={RIGHTS.title} lede={RIGHTS.intro} />
           <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
             {RIGHTS.items.map((r) => (

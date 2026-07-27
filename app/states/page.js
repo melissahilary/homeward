@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { STATES, FEDERAL_NOTE } from "@/lib/states";
+import { STATES, FEDERAL_NOTE, statusOf } from "@/lib/states";
 
 export const metadata = {
   title: "State rules",
@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 export default function StatesPage() {
-  const verified = STATES.filter((s) => s.verified).length;
+  const withData = STATES.filter((s) => statusOf(s) !== "review").length;
 
   return (
     <>
@@ -21,9 +21,10 @@ export default function StatesPage() {
             State rules
           </h1>
           <p className="mt-4 text-lg text-ink-soft">
-            Rules vary by state and are changing. Each page shows what we have
-            and flags what we have not verified. {verified} of {STATES.length}{" "}
-            verified so far.
+            The federal baseline, no refills, 90 days at once, transfer, and
+            partial fill, applies in every state and is on every page. State
+            specific windows are filled in as we source them: {withData} of{" "}
+            {STATES.length} so far.
           </p>
           <p className="mt-4 rounded-lg border border-line bg-panel p-4 text-base text-ink">
             {FEDERAL_NOTE}
@@ -39,8 +40,10 @@ export default function StatesPage() {
               >
                 <span>{s.name}</span>
                 <span
-                  className={`h-2 w-2 shrink-0 rounded-full ${s.verified ? "bg-stock" : "bg-line"}`}
-                  aria-label={s.verified ? "verified" : "not yet verified"}
+                  className={`h-2 w-2 shrink-0 rounded-full ${
+                    statusOf(s) === "verified" ? "bg-stock" : statusOf(s) === "sourced" ? "bg-pending" : "bg-line"
+                  }`}
+                  aria-label={statusOf(s)}
                 />
               </Link>
             </li>
