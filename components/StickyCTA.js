@@ -23,7 +23,7 @@ export default function StickyCTA() {
       }`}
     >
       <div className="flex items-center justify-between gap-4 px-5 py-3">
-        <span className="text-sm text-ink-soft">$99 a year. Cancel anytime.</span>
+        <span className="text-sm text-ink-soft">$99 for the year, paid once.</span>
         <SignupButton className="btn !px-5 !py-2.5 text-base">Get started</SignupButton>
       </div>
     </div>

@@ -127,40 +127,50 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* Pricing, then FAQ. Yearly first and dominant; the gap makes it
-            obviously correct without arguing for it. No badges, no shaming. */}
+        {/* Pricing, then FAQ. One number, one payment. The whole promise of
+            the product, don't think about it for a year, is also the way you
+            pay for it. No monthly drip, no badges, no shaming. */}
         <Section id="pricing">
-          <SectionHead title="The price" />
-          <div className="mt-8 grid max-w-3xl grid-cols-1 gap-5 sm:grid-cols-2">
-            {/* Yearly, visually dominant. */}
-            <div className="rounded-xl border-2 border-ink bg-white p-7">
+          <SectionHead
+            title="The price"
+            lede="You pay once, up front, and you are set for the year. The same thing the product does for your refills, it does for your bill."
+          />
+          <div className="mt-8 max-w-xl">
+            <div className="rounded-xl border-2 border-ink bg-white p-8">
               <div className="flex items-baseline gap-2">
-                <span className="text-[2.75rem] font-semibold leading-none text-ink">
+                <span className="text-[3.25rem] font-semibold leading-none text-ink">
                   {PRICING.year}
                 </span>
-                <span className="text-xl text-ink-soft">a year</span>
+                <span className="text-xl text-ink-soft">for the year</span>
               </div>
-              <p className="mt-3 text-base text-ink-soft">
-                Works out to {PRICING.perMonth} a month.
+              <p className="mt-4 text-lg text-ink">
+                Paid one time. Not billed monthly, not billed again until you
+                choose to renew.
               </p>
-              <p className="mt-3 text-base text-ink-soft">
-                We email you 30 days and 7 days before renewal. Thirty-day
-                refund, one click.
+
+              {/* The money, marketed plainly. The cheap anchor and the pay-once
+                  fact, side by side, so both land. */}
+              <dl className="mt-6 space-y-3 border-t border-line pt-6 text-base">
+                <div className="flex items-baseline justify-between gap-4">
+                  <dt className="text-ink-soft">What it works out to</dt>
+                  <dd className="font-mono text-ink">{PRICING.perMonth} a month</dd>
+                </div>
+                <div className="flex items-baseline justify-between gap-4">
+                  <dt className="text-ink-soft">What you actually pay</dt>
+                  <dd className="font-mono text-ink">{PRICING.year}, one time</dd>
+                </div>
+                <div className="flex items-baseline justify-between gap-4">
+                  <dt className="text-ink-soft">Times you get billed a year</dt>
+                  <dd className="font-mono text-ink">Once</dd>
+                </div>
+              </dl>
+
+              <p className="mt-6 text-base text-ink-soft">
+                We email you 30 days and 7 days before it renews, so the charge
+                never surprises you. Thirty-day refund, one click, no
+                conversation.
               </p>
               <SignupButton className="btn btn-block mt-6 text-lg">Get started</SignupButton>
-            </div>
-            {/* Monthly, plain, no shaming, no badge. */}
-            <div className="rounded-xl border border-line bg-white p-7">
-              <div className="flex items-baseline gap-2">
-                <span className="text-[2.75rem] font-semibold leading-none text-ink">
-                  {PRICING.monthly}
-                </span>
-                <span className="text-xl text-ink-soft">a month</span>
-              </div>
-              <p className="mt-3 text-base text-ink-soft">
-                Cancel anytime, one click.
-              </p>
-              <SignupButton className="btn btn-secondary btn-block mt-6 text-lg">Start monthly</SignupButton>
             </div>
           </div>
         </Section>
