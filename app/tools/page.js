@@ -13,6 +13,7 @@ const TOOLS = [
   { href: "/tools/state-rules", name: "State rules lookup", body: "Pick your state to see transfer, expiration, and telemedicine rules, honestly flagged as verified or not." },
   { href: "/tools/message", name: "Message generator", body: "Fill four fields and get a ready-to-send message: prescriber request, transfer, partial fill, or stock inquiry." },
   { href: "/tools/calendar", name: "Calendar export", body: "Drop the day 22, 27, and 29 alerts into the calendar you already check, as a plain .ics file." },
+  { href: "/report", name: "Report an outcome", body: "One tap after a fill or transfer — filled, out of stock, or wrongly refused. It builds the map of which counter works." },
 ];
 
 export default function ToolsPage() {

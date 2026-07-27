@@ -28,6 +28,17 @@ export default function AccountPage() {
         <Action label="Export my data" note="Everything we hold." />
       </div>
 
+      <div className="mt-6 max-w-measure rounded-xl border border-line bg-white p-5">
+        <p className="text-base font-medium text-ink">Invite a caregiver</p>
+        <p className="mt-1 text-sm text-ink-faint">
+          Give a partner or parent a read-only view of your cycle. They get a
+          link, not a login. Turn it off any time.
+        </p>
+        <Link href="/caregiver" className="btn btn-secondary mt-4 !py-2.5 text-base">
+          Set up caregiver access
+        </Link>
+      </div>
+
       <p className="mt-6 max-w-measure text-base text-ink-soft">
         Want to remove your health data too?{" "}
         <Link href="/delete" className="link">

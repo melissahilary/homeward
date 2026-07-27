@@ -22,6 +22,16 @@ const COLUMNS = [
     ],
   },
   {
+    title: "The map",
+    links: [
+      { label: "Which counter works", href: "/pharmacies" },
+      { label: "Report an outcome", href: "/report" },
+      { label: "How the map is built", href: "/the-map" },
+      { label: "Caregiver access", href: "/caregiver" },
+      { label: "Email previews", href: "/email" },
+    ],
+  },
+  {
     title: "Library",
     links: [
       { label: "State rules", href: "/states" },
@@ -73,7 +83,7 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto max-w-content px-5 py-12 md:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {COLUMNS.map((col) => (
             <nav key={col.title}>
               <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-ink-faint">
