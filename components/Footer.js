@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BRAND } from "@/lib/site";
+import { BRAND, POSITIONING } from "@/lib/site";
 
 const COLUMNS = [
   {
@@ -105,9 +105,8 @@ export default function Footer() {
         <div className="mt-10 flex flex-col gap-3 border-t border-line pt-6 md:flex-row md:items-center md:justify-between">
           <p className="text-lg font-semibold text-ink">{BRAND.wordmark}</p>
           <p className="max-w-xl text-sm text-ink-faint">
-            A coordination tool for the monthly Schedule II cycle. Not a clinical
-            service. We do not diagnose, treat, prescribe, dispense, or send
-            anything for you.
+            {POSITIONING.category} Not a clinical service. We make no clinical
+            judgment, supply no medication, and send nothing for you.
           </p>
         </div>
         <div className="mt-4 flex flex-col gap-2 text-sm text-ink-faint md:flex-row md:justify-between">

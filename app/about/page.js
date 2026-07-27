@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ABOUT } from "@/lib/site";
+import { ABOUT, POSITIONING } from "@/lib/site";
 
 export const metadata = {
   title: "About",
@@ -17,7 +17,10 @@ export default function AboutPage() {
           <h1 className="text-2xl font-semibold tracking-tight text-ink md:text-[2rem]">
             {ABOUT.title}
           </h1>
-          <p className="mt-4 text-xl leading-relaxed text-ink">{ABOUT.lede}</p>
+          <p className="mt-4 text-xl font-medium leading-relaxed text-ink">
+            {POSITIONING.person}
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-ink-soft">{ABOUT.lede}</p>
         </div>
         <div className="mt-10 max-w-measure space-y-10">
           {ABOUT.sections.map((s) => (
@@ -27,6 +30,15 @@ export default function AboutPage() {
             </section>
           ))}
         </div>
+
+        <section className="mt-12 max-w-measure rounded-xl border border-line bg-panel p-6">
+          <h2 className="text-lg font-semibold text-ink">
+            For prescribers and pharmacists
+          </h2>
+          <p className="mt-2 text-lg leading-relaxed text-ink-soft">
+            {POSITIONING.clinician}
+          </p>
+        </section>
       </main>
       <Footer />
     </>

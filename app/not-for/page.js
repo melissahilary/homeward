@@ -6,7 +6,7 @@ import { NOT_FOR } from "@/lib/site";
 export const metadata = {
   title: "Who this is not for",
   description:
-    "The clearest trust signal we have: what we refuse to do. Not for diagnosis, not for finding a prescriber, not for medication without a script.",
+    "The clearest trust signal we have: what we refuse to do. Not for a clinical assessment, not for finding a prescriber, not for medication without a script.",
 };
 
 export default function NotForPage() {

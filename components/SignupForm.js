@@ -2,15 +2,17 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { SIGNUP, PRICING } from "@/lib/site";
+import { SIGNUP, PRICING, POSITIONING } from "@/lib/site";
 
 // Four fields, one screen, no progress bar. Payment on the same screen.
-// Consent is unbundled per My Health My Data: two separate, unchecked
-// boxes, neither buried in the terms. Succeeds client-side.
+// Consent is unbundled per My Health My Data: collection consent and
+// sharing consent are separate, unchecked, and never buried in the terms.
+// Succeeds client-side.
 export default function SignupForm() {
   const [done, setDone] = useState(false);
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [consentHealth, setConsentHealth] = useState(false);
+  const [shareOutcomes, setShareOutcomes] = useState(false);
 
   if (done) {
     return (
@@ -88,6 +90,19 @@ export default function SignupForm() {
             .
           </span>
         </label>
+        <label className="flex cursor-pointer items-start gap-3 text-base text-ink">
+          <input
+            type="checkbox"
+            checked={shareOutcomes}
+            onChange={(e) => setShareOutcomes(e.target.checked)}
+            className="mt-1 h-4 w-4 shrink-0"
+          />
+          <span>
+            <span className="font-medium">Optional.</span> I consent to sharing my
+            de-identified fill outcomes to build the pharmacy reliability map. This
+            is separate from the consent above, and never required.
+          </span>
+        </label>
       </fieldset>
 
       <div className="mt-5 flex items-baseline justify-between border-t border-line pt-4">
@@ -108,6 +123,9 @@ export default function SignupForm() {
       <p className="mt-3 text-sm text-ink-faint">
         {PRICING.refundDays}-day refund, one click, no conversation. We email you
         30 days before renewal, and again 7 days before.
+      </p>
+      <p className="mt-4 border-t border-line pt-3 text-sm text-ink-faint">
+        {POSITIONING.category}
       </p>
     </form>
   );

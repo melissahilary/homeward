@@ -70,7 +70,9 @@ export default function MessageGenerator() {
           ))}
         </div>
         <p className="mt-4 text-sm text-ink-faint">
-          Leave a field blank to keep its [placeholder]. Basis: {template.cite}
+          Leave a field blank to keep its [placeholder]. Basis: {template.cite}.
+          Fixed templates, filled in from your entries — nothing here is
+          AI-generated.
         </p>
       </div>
 
