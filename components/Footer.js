@@ -105,6 +105,12 @@ export default function Footer() {
           ))}
         </div>
 
+        {/* Quiet, sitewide. Lands because it asks for no attention. */}
+        <p className="mt-12 max-w-xl text-base text-ink-soft">
+          We keep our rules where you can see them, for the same reason we keep
+          your dates where you can see them.
+        </p>
+
         <div className="mt-10 flex flex-col gap-3 border-t border-line pt-6 md:flex-row md:items-center md:justify-between">
           <p className="text-lg font-semibold text-ink">{BRAND.wordmark}</p>
           <p className="max-w-xl text-sm text-ink-faint">

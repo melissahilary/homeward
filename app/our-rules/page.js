@@ -95,7 +95,11 @@ export default function OurRulesPage() {
         {/* Four — why. */}
         <section className="mt-14 max-w-measure border-t border-line pt-10">
           <h2 className="text-xl font-semibold text-ink">Why</h2>
-          <p className="mt-4 text-lg leading-relaxed text-ink">
+          <p className="mt-4 text-xl leading-relaxed text-ink">
+            We keep our rules where you can see them, for the same reason we keep
+            your dates where you can see them.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-ink-soft">
             If a pharmacy paid us, our recommendation would be an advertisement.
             The only reason to trust which pharmacy we send you to is that we have
             no reason to send you anywhere but the one most likely to work.
