@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --paper: #fafaf7;
-  --ink: #17171a;
-  --focus: #1d4ed8;
+  --paper: #121210;
+  --ink: #f4f1e8;
+  --focus: #7ca9ff;
 }
 
 html {
@@ -33,42 +33,43 @@ summary:focus-visible,
   border-radius: 2px;
 }
 
-/* Inline links: near-black, underlined, functional. */
+/* Inline links: text-colored, underlined, functional. */
 .link {
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
+  text-decoration-color: rgba(244, 241, 232, 0.45);
 }
 .link:hover {
-  text-decoration-color: var(--focus);
+  text-decoration-color: var(--ink);
 }
 
 @layer components {
-  /* Primary action — the instrument button. No gradients, no motion. */
+  /* Primary action — the one accent: a bright warm fill on the dark base. */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    background-color: var(--ink);
-    color: #fafaf7;
-    font-weight: 500;
+    background-color: #f4f1e8;
+    color: #121210;
+    font-weight: 600;
     font-size: 1.0625rem;
     padding: 0.85rem 1.5rem;
     border-radius: 8px;
-    border: 1px solid var(--ink);
+    border: 1px solid #f4f1e8;
   }
   .btn:hover {
-    background-color: #000;
+    background-color: #fffdf6;
   }
   .btn-secondary {
     background-color: transparent;
-    color: var(--ink);
-    border: 1px solid #cfcfc6;
+    color: #f4f1e8;
+    border: 1px solid rgba(244, 241, 232, 0.28);
   }
   .btn-secondary:hover {
-    background-color: #f2f2ed;
+    background-color: rgba(244, 241, 232, 0.08);
   }
   .btn-block {
     display: flex;
@@ -77,19 +78,65 @@ summary:focus-visible,
 
   .field {
     width: 100%;
-    background-color: #fff;
-    border: 1px solid #cfcfc6;
+    background-color: #17150f;
+    border: 1px solid rgba(244, 241, 232, 0.18);
     border-radius: 8px;
     padding: 0.85rem 0.95rem;
     font-size: 1.0625rem;
     color: var(--ink);
   }
   .field::placeholder {
-    color: #9a9a90;
+    color: #7c776b;
   }
 }
 
-/* Print: drop the site chrome so a page hands cleanly to a doctor or a PDF. */
+/* ---- The choreography hero ----
+   Five discrete sections, each animates once on entry (IntersectionObserver
+   adds .is-in). No scroll-jacking, no pinning — the user owns the scroll.
+   Every frame is a valid stopping point. */
+.choreo-frame {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.choreo-frame.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Nodes populate left to right once the frame is in view. */
+.choreo-node {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+.is-in .choreo-node {
+  opacity: 1;
+}
+.is-in .choreo-node:nth-child(1) { transition-delay: 0.05s; }
+.is-in .choreo-node:nth-child(2) { transition-delay: 0.10s; }
+.is-in .choreo-node:nth-child(3) { transition-delay: 0.15s; }
+.is-in .choreo-node:nth-child(4) { transition-delay: 0.20s; }
+.is-in .choreo-node:nth-child(5) { transition-delay: 0.25s; }
+.is-in .choreo-node:nth-child(6) { transition-delay: 0.30s; }
+.is-in .choreo-node:nth-child(7) { transition-delay: 0.35s; }
+.is-in .choreo-node:nth-child(8) { transition-delay: 0.40s; }
+.is-in .choreo-node:nth-child(9) { transition-delay: 0.45s; }
+.is-in .choreo-node:nth-child(10) { transition-delay: 0.50s; }
+.is-in .choreo-node:nth-child(11) { transition-delay: 0.55s; }
+.is-in .choreo-node:nth-child(12) { transition-delay: 0.60s; }
+
+/* The rights fire in a beat after the nodes settle. */
+.choreo-right {
+  opacity: 0;
+  transition: opacity 0.5s ease 0.5s;
+}
+.is-in .choreo-right {
+  opacity: 1;
+}
+
+/* Print: drop the site chrome and invert to ink-on-white so a page hands
+   cleanly to a doctor or a PDF (the dark UI is for screens, not paper). */
 @media print {
   header,
   footer,
@@ -97,7 +144,12 @@ summary:focus-visible,
     display: none !important;
   }
   body {
-    background: #fff;
+    background: #fff !important;
+  }
+  * {
+    color: #111 !important;
+    background-color: transparent !important;
+    border-color: #ccc !important;
   }
 }
 

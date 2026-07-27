@@ -23,12 +23,12 @@ const PHASES = [
   { label: "Close", days: "Days 28–33", from: 9, to: 12 },
 ];
 
-const INK = "#17171A";
-const SOFT = "#54544E";
-const FAINT = "#84847C";
-const LINE = "#E2E2DA";
-const STOCK = "#1F7A44";
-const EXPIRED = "#B4321F";
+const INK = "#F4F1E8";
+const SOFT = "#B7B3A8";
+const FAINT = "#8A857A";
+const LINE = "#34312B";
+const STOCK = "#5FBE86";
+const EXPIRED = "#E77E63";
 
 const W = 1180;
 const H = 470;
@@ -53,7 +53,7 @@ export default function DiagramSVG({ id = "daykeep-diagram", branded = true }) {
       width="100%"
       role="img"
       aria-label="The twelve-step Schedule II refill loop across days 20 to 33, with three steps marked as rights you already hold and two marked as where the loop breaks."
-      style={{ display: "block", background: "#FAFAF7" }}
+      style={{ display: "block", background: "#121210" }}
     >
       <text x={MX} y={44} fontFamily="Inter, sans-serif" fontSize="26" fontWeight="600" fill={INK}>
         The refill loop
@@ -73,7 +73,7 @@ export default function DiagramSVG({ id = "daykeep-diagram", branded = true }) {
         const x2 = xOf(p.to - 1) + 26;
         return (
           <g key={p.label}>
-            <rect x={x1} y={120} width={x2 - x1} height={40} rx={8} fill="#F2F2ED" />
+            <rect x={x1} y={120} width={x2 - x1} height={40} rx={8} fill="#1C1A16" />
             <text x={(x1 + x2) / 2} y={140} textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="15" fontWeight="600" fill={INK}>
               {p.label}
             </text>
@@ -94,7 +94,7 @@ export default function DiagramSVG({ id = "daykeep-diagram", branded = true }) {
         return (
           <g key={node.n}>
             <line x1={x} y1={170} x2={x} y2={AXIS_Y} stroke={LINE} strokeWidth="1.5" />
-            <circle cx={x} cy={AXIS_Y} r="20" fill="#FAFAF7" stroke={c} strokeWidth={node.kind === "step" ? 1.5 : 3} />
+            <circle cx={x} cy={AXIS_Y} r="20" fill="#121210" stroke={c} strokeWidth={node.kind === "step" ? 1.5 : 3} />
             <text x={x} y={AXIS_Y + 5} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="15" fontWeight="500" fill={c}>
               {node.n}
             </text>
@@ -107,11 +107,11 @@ export default function DiagramSVG({ id = "daykeep-diagram", branded = true }) {
 
       {/* Legend */}
       <g transform={`translate(${MX}, ${H - 40})`}>
-        <circle cx="8" cy="-4" r="8" fill="#FAFAF7" stroke={STOCK} strokeWidth="3" />
+        <circle cx="8" cy="-4" r="8" fill="#121210" stroke={STOCK} strokeWidth="3" />
         <text x="24" y="0" fontFamily="Inter, sans-serif" fontSize="14" fill={INK}>
           A right you already hold
         </text>
-        <circle cx="248" cy="-4" r="8" fill="#FAFAF7" stroke={EXPIRED} strokeWidth="3" />
+        <circle cx="248" cy="-4" r="8" fill="#121210" stroke={EXPIRED} strokeWidth="3" />
         <text x="264" y="0" fontFamily="Inter, sans-serif" fontSize="14" fill={INK}>
           Where the loop breaks
         </text>

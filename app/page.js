@@ -2,12 +2,10 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CopyBlock from "@/components/CopyBlock";
-import Timeline from "@/components/Timeline";
+import Choreography from "@/components/Choreography";
 import {
-  HERO,
   TEMPLATE,
   RIGHTS,
-  TIMELINE,
   NOT_FOR,
   CHARTER,
   FAQ,
@@ -19,23 +17,11 @@ export default function Home() {
     <>
       <Header />
       <main>
-        {/* Above the fold — the permanent problem, the who-it's-for line, one button. */}
-        <section className="mx-auto max-w-content px-5 pb-16 pt-16 md:px-8 md:pb-24 md:pt-28">
-          <h1 className="max-w-4xl text-3xl font-semibold tracking-tight text-ink md:text-[3.25rem] md:leading-[1.05]">
-            {HERO.headline}
-          </h1>
-          <p className="mt-6 max-w-measure text-xl text-ink-soft">
-            {HERO.subhead}
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-5">
-            <Link href="/signup" className="btn text-lg">
-              {HERO.cta}
-            </Link>
-            <Link href="/diagram" className="link text-lg">
-              See the loop, drawn
-            </Link>
-          </div>
-        </section>
+        {/* The choreography — the whole product in five frames, and the one
+            place the motion budget is spent. */}
+        <div id="loop">
+          <Choreography />
+        </div>
 
         {/* The free artifact, immediately. No email required. */}
         <Section id="template" className="border-t border-line bg-panel">
@@ -70,14 +56,6 @@ export default function Home() {
           <Link href="/rights" className="link mt-8 inline-block text-lg">
             Read the three rights in full
           </Link>
-        </Section>
-
-        {/* The twelve steps. */}
-        <Section id="loop" className="border-t border-line bg-panel">
-          <SectionHead title={TIMELINE.title} lede={TIMELINE.intro} />
-          <div className="mt-8">
-            <Timeline />
-          </div>
         </Section>
 
         {/* Who this is not for. */}
@@ -119,50 +97,46 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* Pricing, then FAQ. */}
+        {/* Pricing, then FAQ. Yearly first and dominant; the gap makes it
+            obviously correct without arguing for it. No badges, no shaming. */}
         <Section id="pricing">
-          <SectionHead
-            title="One tier. Pay yearly or monthly."
-            lede="Same product either way. Yearly is cheaper; monthly is here so an upfront charge never keeps anyone out."
-          />
+          <SectionHead title="The price" />
           <div className="mt-8 grid max-w-3xl grid-cols-1 gap-5 sm:grid-cols-2">
-            <div className="rounded-xl border-2 border-ink bg-white p-6">
-              <p className="text-sm font-semibold uppercase tracking-wide text-ink-faint">
-                Yearly · best value
-              </p>
-              <div className="mt-2 flex items-baseline gap-2">
-                <span className="text-3xl font-semibold text-ink">{PRICING.year}</span>
-                <span className="text-lg text-ink-soft">/ year</span>
+            {/* Yearly — visually dominant. */}
+            <div className="rounded-xl border-2 border-ink bg-white p-7">
+              <div className="flex items-baseline gap-2">
+                <span className="text-[2.75rem] font-semibold leading-none text-ink">
+                  {PRICING.year}
+                </span>
+                <span className="text-xl text-ink-soft">a year</span>
               </div>
-              <p className="mt-1 text-base text-ink-soft">
-                {PRICING.perMonth} a month, charged once.
+              <p className="mt-3 text-base text-ink-soft">
+                Works out to {PRICING.perMonth} a month.
               </p>
-              <Link href="/signup" className="btn btn-block mt-5 text-lg">
-                {HERO.cta}
+              <p className="mt-3 text-base text-ink-soft">
+                We email you 30 days and 7 days before renewal. Thirty-day
+                refund, one click.
+              </p>
+              <Link href="/signup" className="btn btn-block mt-6 text-lg">
+                Get started
               </Link>
             </div>
-            <div className="rounded-xl border border-line bg-white p-6">
-              <p className="text-sm font-semibold uppercase tracking-wide text-ink-faint">
-                Monthly
-              </p>
-              <div className="mt-2 flex items-baseline gap-2">
-                <span className="text-3xl font-semibold text-ink">{PRICING.monthly}</span>
-                <span className="text-lg text-ink-soft">/ month</span>
+            {/* Monthly — plain, no shaming, no badge. */}
+            <div className="rounded-xl border border-line bg-white p-7">
+              <div className="flex items-baseline gap-2">
+                <span className="text-[2.75rem] font-semibold leading-none text-ink">
+                  {PRICING.monthly}
+                </span>
+                <span className="text-xl text-ink-soft">a month</span>
               </div>
-              <p className="mt-1 text-base text-ink-soft">Cancel any time, one click.</p>
-              <Link href="/signup" className="btn btn-secondary btn-block mt-5 text-lg">
+              <p className="mt-3 text-base text-ink-soft">
+                Cancel anytime, one click.
+              </p>
+              <Link href="/signup" className="btn btn-secondary btn-block mt-6 text-lg">
                 Start monthly
               </Link>
             </div>
           </div>
-          <ul className="mt-6 max-w-measure space-y-2.5 text-base text-ink">
-            <li>We email you 30 days before renewal, and again 7 days before.</li>
-            <li>{PRICING.refundDays}-day refund, one click in settings, no conversation.</li>
-            <li>One product. No good-better-best.</li>
-          </ul>
-          <p className="mt-5 max-w-measure text-base text-ink-soft">
-            One missed workday costs more than the year.
-          </p>
         </Section>
 
         <Section id="faq" className="border-t border-line bg-panel">
