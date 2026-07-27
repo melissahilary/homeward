@@ -23,7 +23,7 @@ export default function Header() {
           <ul className="flex items-center gap-7">
             {NAV.map((n) => (
               <li key={n.href}>
-                <Link href={n.href} className="text-base text-ink-soft hover:text-ink">
+                <Link href={n.href} className="nav-underline text-base text-ink-soft hover:text-ink">
                   {n.label}
                 </Link>
               </li>
@@ -33,7 +33,7 @@ export default function Header() {
 
         {/* Right, log in, then the one action. */}
         <div className="flex items-center gap-4 md:gap-6">
-          <Link href="/login" className="text-base text-ink-soft hover:text-ink">
+          <Link href="/login" className="nav-underline text-base text-ink-soft hover:text-ink">
             Log in
           </Link>
           <Link href="/signup" className="btn !px-4 !py-2 text-base">
