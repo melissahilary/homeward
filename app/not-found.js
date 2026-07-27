@@ -1,22 +1,23 @@
 import Link from "next/link";
-import WorldHeader from "@/components/WorldHeader";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function NotFound() {
   return (
     <>
-      <WorldHeader />
-      <main className="flex min-h-[70vh] flex-col items-center justify-center px-6 pt-28 text-center">
-        <p className="eyebrow eyebrow-camel mb-6">Off the path</p>
-        <h1 className="font-serif text-5xl font-light text-ink md:text-6xl">
-          This room is empty.
+      <Header />
+      <main className="mx-auto flex min-h-[50vh] max-w-content flex-col justify-center px-5 py-20 md:px-8">
+        <h1 className="text-2xl font-semibold tracking-tight text-ink md:text-[2rem]">
+          That page is not here.
         </h1>
-        <p className="mt-5 max-w-sm font-serif text-lg leading-body text-soft">
-          The page you asked for is not part of the house. Let us walk you back.
+        <p className="mt-3 max-w-measure text-lg text-ink-soft">
+          The link is broken or the page moved. Head back and start again.
         </p>
-        <Link href="/" className="link-underline mt-8 text-ink">
-          Return home
-        </Link>
+        <div className="mt-6">
+          <Link href="/" className="btn">
+            Back to start
+          </Link>
+        </div>
       </main>
       <Footer />
     </>

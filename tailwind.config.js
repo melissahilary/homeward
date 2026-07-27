@@ -8,36 +8,38 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ivory: "#F3EFE5",
-        "ivory-deep": "#EDE7D9",
-        charcoal: "#26231E",
-        ink: "#2E2B25",
-        soft: "#57524A",
-        travertine: "#D8CBB2",
-        camel: "#A97F52",
-        steel: "#A8A49C",
-        warmwhite: "#F6F1E6",
-        tile: "#EDE8DB",
-        "tile-hover": "#E7E0CF",
+        // Near-black on off-white. Functional color only for actions/status.
+        paper: "#FAFAF7",
+        panel: "#F2F2ED",
+        line: "#E2E2DA",
+        ink: "#17171A",
+        "ink-soft": "#54544E",
+        "ink-faint": "#84847C",
+        // Status — carries information or does not appear.
+        stock: "#1F7A44", // green: in stock
+        pending: "#9A6800", // amber: pending
+        expired: "#B4321F", // red: expired / blocked
+        focus: "#1D4ED8", // functional accent: focus + inline links
       },
       fontFamily: {
-        serif: ["var(--font-cormorant)", "Cormorant Garamond", "Georgia", "serif"],
-        caps: ["var(--font-jost)", "Jost", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "-apple-system", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
-      letterSpacing: {
-        cap: "0.3em",
-        capwide: "0.42em",
-        wordmark: "0.55em",
-      },
-      lineHeight: {
-        display: "1.15",
-        body: "1.75",
-      },
-      transitionTimingFunction: {
-        house: "cubic-bezier(0.22, 0.61, 0.36, 1)",
+      fontSize: {
+        // Body at 18px minimum.
+        base: ["1.125rem", { lineHeight: "1.6" }],
+        lg: ["1.25rem", { lineHeight: "1.55" }],
+        xl: ["1.5rem", { lineHeight: "1.4" }],
+        "2xl": ["2rem", { lineHeight: "1.2" }],
+        "3xl": ["2.75rem", { lineHeight: "1.1" }],
       },
       maxWidth: {
-        prose: "62ch",
+        // Line length capped ~65 characters.
+        measure: "38rem",
+        content: "64rem",
+      },
+      borderColor: {
+        DEFAULT: "#E2E2DA",
       },
     },
   },

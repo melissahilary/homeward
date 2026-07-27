@@ -1,8 +1,8 @@
 {
-  "name": "homeward",
+  "name": "refill",
   "version": "1.0.0",
   "private": true,
-  "description": "HOMEWARD — The Wellness House for Dogs",
+  "description": "Refill — the coordination layer for the monthly Schedule II cycle",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

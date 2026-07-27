@@ -3,184 +3,96 @@
 @tailwind utilities;
 
 :root {
-  --ivory: #f3efe5;
-  --ivory-deep: #ede7d9;
-  --charcoal: #26231e;
-  --ink: #2e2b25;
-  --soft: #57524a;
-  --travertine: #d8cbb2;
-  --camel: #a97f52;
-  --steel: #a8a49c;
-  --warmwhite: #f6f1e6;
+  --paper: #fafaf7;
+  --ink: #17171a;
+  --focus: #1d4ed8;
 }
 
 html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: var(--ivory);
+  background-color: var(--paper);
   color: var(--ink);
-  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ---- Utility: letterspaced caps with matching text-indent ---- */
-@layer components {
-  .eyebrow {
-    font-family: var(--font-jost), "Jost", system-ui, sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 0.42em;
-    text-indent: 0.42em;
-    font-size: 0.6875rem;
-    line-height: 1.6;
-    color: var(--soft);
-  }
-
-  .eyebrow-camel {
-    color: var(--camel);
-  }
-
-  .caps {
-    font-family: var(--font-jost), "Jost", system-ui, sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 0.34em;
-    text-indent: 0.34em;
-  }
-
-  .caps-wide {
-    letter-spacing: 0.5em;
-    text-indent: 0.5em;
-  }
-
-  .wordmark {
-    font-family: var(--font-jost), "Jost", system-ui, sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 0.55em;
-    text-indent: 0.55em;
-  }
-
-  /* Underlined text link, Aman style */
-  .link-underline {
-    font-family: var(--font-jost), "Jost", system-ui, sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 0.28em;
-    text-indent: 0.28em;
-    font-size: 0.6875rem;
-    padding-bottom: 0.35rem;
-    border-bottom: 1px solid currentColor;
-    display: inline-block;
-    transition: opacity 0.6s var(--ease, cubic-bezier(0.22, 0.61, 0.36, 1));
-  }
-  .link-underline:hover {
-    opacity: 0.55;
-  }
-
-  /* Solid charcoal button — "Enter the House" / Add to Bag */
-  .btn-solid {
-    font-family: var(--font-jost), "Jost", system-ui, sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 0.26em;
-    text-indent: 0.26em;
-    font-size: 0.6875rem;
-    background-color: var(--charcoal);
-    color: var(--warmwhite);
-    padding: 0.9rem 1.6rem;
-    display: inline-block;
-    transition: background-color 0.6s ease, color 0.6s ease;
-  }
-  .btn-solid:hover {
-    background-color: #34302a;
-  }
-
-  .btn-block {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 1.15rem 1.6rem;
-  }
-}
-
-/* ---- Slow reveal on scroll ---- */
-.reveal {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
-    transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
-  will-change: opacity, transform;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ---- Slow zoom for hover images ---- */
-.slow-zoom img {
-  transition: transform 6s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-.slow-zoom:hover img {
-  transform: scale(1.04);
-}
-
-/* ---- Hero perpetual slow zoom ---- */
-@keyframes hero-zoom {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.05);
-  }
-}
-.hero-zoom img {
-  animation: hero-zoom 12s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-}
-
-/* Hairline rule */
-.hairline {
-  border-color: rgba(46, 43, 37, 0.16);
-}
-.hairline-light {
-  border-color: rgba(246, 241, 230, 0.22);
-}
-
-/* Focus states */
+/* Visible focus states — accessibility is the product demo. */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
-summary:focus-visible {
-  outline: 1px solid var(--camel);
-  outline-offset: 3px;
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
-/* Horizontal scroll rows */
-.scroll-row {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+/* Inline links: near-black, underlined, functional. */
+.link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
-.scroll-row::-webkit-scrollbar {
-  display: none;
+.link:hover {
+  text-decoration-color: var(--focus);
 }
 
+@layer components {
+  /* Primary action — the instrument button. No gradients, no motion. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--ink);
+    color: #fafaf7;
+    font-weight: 500;
+    font-size: 1.0625rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--ink);
+  }
+  .btn:hover {
+    background-color: #000;
+  }
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--ink);
+    border: 1px solid #cfcfc6;
+  }
+  .btn-secondary:hover {
+    background-color: #f2f2ed;
+  }
+  .btn-block {
+    display: flex;
+    width: 100%;
+  }
+
+  .field {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #cfcfc6;
+    border-radius: 8px;
+    padding: 0.85rem 0.95rem;
+    font-size: 1.0625rem;
+    color: var(--ink);
+  }
+  .field::placeholder {
+    color: #9a9a90;
+  }
+}
+
+/* No motion. Honor the preference and go further — we omit it anyway. */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-  .hero-zoom img {
-    animation: none;
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }

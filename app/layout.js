@@ -1,50 +1,42 @@
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { CartProvider } from "@/components/CartProvider";
+import { BRAND } from "@/lib/site";
 
-const cormorant = Cormorant_Garamond({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  weight: ["400", "500", "600"],
+  variable: "--font-inter",
   display: "swap",
 });
 
-const jost = Jost({
+const mono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["200", "300", "400"],
-  variable: "--font-jost",
+  weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata = {
-  metadataBase: new URL("https://homeward.com"),
+  metadataBase: new URL("https://refill.app"),
   title: {
-    default: "HOMEWARD — The Wellness House for Dogs",
-    template: "%s — HOMEWARD",
+    default: `${BRAND.name} — Schedule II has no refills`,
+    template: `%s — ${BRAND.name}`,
   },
   description:
-    "The wellness house for dogs. Rituals, instruments and formulas for the hours of their day. Nothing harmful added.",
-  openGraph: {
-    title: "HOMEWARD — The Wellness House for Dogs",
-    description:
-      "Rituals, instruments and formulas for the hours of their day. Nothing harmful added.",
-    type: "website",
-  },
+    "The coordination layer for the monthly Schedule II loop. The timing, the paperwork, the transfer. For adults who already have a script.",
+  robots: { index: true, follow: true },
 };
 
 export const viewport = {
-  themeColor: "#F3EFE5",
+  themeColor: "#FAFAF7",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
-      <body className="bg-ivory text-ink antialiased">
-        <CartProvider>{children}</CartProvider>
-      </body>
+    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
+      <body className="bg-paper text-ink">{children}</body>
     </html>
   );
 }
