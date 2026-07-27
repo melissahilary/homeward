@@ -133,13 +133,14 @@ function Phone({ phase }) {
   return (
     // Device bezel: titanium edge, deep shadow, crisp corners.
     <div
-      className="relative mx-auto w-full max-w-[318px]"
+      className="relative mx-auto w-full max-w-[314px]"
       style={{
-        padding: "11px",
-        borderRadius: "3.3rem",
-        background: "linear-gradient(160deg, #3a3a3d 0%, #0b0b0c 22%, #050506 55%, #17171a 100%)",
+        padding: "12px",
+        borderRadius: "3.4rem",
+        background:
+          "linear-gradient(145deg, #6f6f74 0%, #2b2b2e 14%, #08080a 40%, #050506 60%, #202024 84%, #55555a 100%)",
         boxShadow:
-          "0 55px 90px -35px rgba(0,0,0,0.9), 0 0 0 1px rgba(0,0,0,0.6), inset 0 1px 1px rgba(255,255,255,0.14)",
+          "0 60px 100px -38px rgba(0,0,0,0.92), 0 0 0 1px rgba(0,0,0,0.7), inset 0 1px 1.5px rgba(255,255,255,0.28), inset 0 -1px 1.5px rgba(255,255,255,0.12)",
       }}
       aria-label="An iPhone showing three text messages across the month"
     >
@@ -150,21 +151,41 @@ function Phone({ phase }) {
       <span aria-hidden="true" className="absolute -left-[2px] top-[210px] h-12 w-[3px] rounded-l-sm" style={{ background: "linear-gradient(90deg,#2c2c2f,#0a0a0b)" }} />
       <span aria-hidden="true" className="absolute -right-[2px] top-[168px] h-16 w-[3px] rounded-r-sm" style={{ background: "linear-gradient(270deg,#2c2c2f,#0a0a0b)" }} />
 
-      {/* Screen */}
+      {/* Screen. Locked to the real iPhone aspect ratio (about 9:19.5) so the
+          proportions read as a phone, not a card. */}
       <div
-        className="relative overflow-hidden"
-        style={{ borderRadius: "2.7rem", background: "#0a0a0c", minHeight: "540px" }}
+        className="relative flex flex-col overflow-hidden"
+        style={{ borderRadius: "2.8rem", background: "#0a0a0c", aspectRatio: "9 / 19.5" }}
       >
-        {/* Dynamic Island */}
+        {/* Glass. A faint diagonal sheen across the top so the screen reads as
+            glass under light, not a flat fill. Never over the text. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-30"
+          style={{
+            background:
+              "linear-gradient(133deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 12%, rgba(255,255,255,0) 30%)",
+          }}
+        />
+
+        {/* Dynamic Island, with a camera lens glint. */}
         <div
           className="absolute left-1/2 top-[13px] z-20 flex -translate-x-1/2 items-center justify-end gap-2"
-          style={{ width: "94px", height: "27px", background: "#000", borderRadius: "999px", paddingRight: "9px" }}
+          style={{ width: "92px", height: "27px", background: "#000", borderRadius: "999px", paddingRight: "8px" }}
         >
-          <span style={{ width: "7px", height: "7px", borderRadius: "999px", background: "#1c1c22" }} />
+          <span
+            style={{
+              width: "8px",
+              height: "8px",
+              borderRadius: "999px",
+              background: "radial-gradient(circle at 32% 30%, #3a3a48 0%, #101014 55%, #000 100%)",
+              boxShadow: "inset 0 0 1px rgba(120,140,200,0.5)",
+            }}
+          />
         </div>
 
         {/* Status bar */}
-        <div className="flex items-center justify-between px-6 pt-3.5 text-white">
+        <div className="flex shrink-0 items-center justify-between px-6 pt-3.5 text-white">
           <span className="text-[13px] font-semibold tracking-tight">9:41</span>
           <span className="flex items-center gap-1.5">
             <SignalIcon />
@@ -174,7 +195,7 @@ function Phone({ phase }) {
         </div>
 
         {/* iMessage contact header */}
-        <div className="flex flex-col items-center gap-1 border-b border-[rgba(255,255,255,0.07)] px-4 pb-3 pt-3">
+        <div className="flex shrink-0 flex-col items-center gap-1 border-b border-[rgba(255,255,255,0.07)] px-4 pb-3 pt-3">
           <span
             className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold"
             style={{ background: "#26241f", color: "#F4F1E8" }}
@@ -191,8 +212,9 @@ function Phone({ phase }) {
           style={{ width: "116px", height: "5px", background: "rgba(255,255,255,0.55)" }}
         />
 
-        {/* Thread */}
-        <div className="flex flex-col gap-4 px-4 pb-14 pt-5">
+        {/* Thread. flex-1 + justify-end anchors the messages to the bottom of
+            the screen, the way a real Messages conversation stacks. */}
+        <div className="flex flex-1 flex-col justify-end gap-4 px-4 pb-14 pt-5">
           {BLOCKS.map((b, i) => {
             const p = phase[i];
             if (p === 0) return null;
