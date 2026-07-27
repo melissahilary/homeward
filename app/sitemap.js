@@ -8,6 +8,7 @@ const STATIC = [
   "",
   "/how-it-works",
   "/about",
+  "/who-we-serve",
   "/diagram",
   "/signup",
   "/tools",

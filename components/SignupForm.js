@@ -43,16 +43,27 @@ export default function SignupForm() {
             >
               {f.label}
             </label>
-            <input
-              id={f.name}
-              name={f.name}
-              type={f.type}
-              required
-              placeholder={f.placeholder}
-              inputMode={f.inputMode}
-              autoComplete={f.autoComplete}
-              className="field"
-            />
+            {f.type === "select" ? (
+              <select id={f.name} name={f.name} required defaultValue="" className="field">
+                <option value="" disabled>
+                  Choose…
+                </option>
+                {f.options.map((o) => (
+                  <option key={o} value={o}>{o}</option>
+                ))}
+              </select>
+            ) : (
+              <input
+                id={f.name}
+                name={f.name}
+                type={f.type}
+                required
+                placeholder={f.placeholder}
+                inputMode={f.inputMode}
+                autoComplete={f.autoComplete}
+                className="field"
+              />
+            )}
           </div>
         ))}
       </div>

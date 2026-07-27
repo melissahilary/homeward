@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ABOUT, POSITIONING } from "@/lib/site";
@@ -29,6 +30,12 @@ export default function AboutPage() {
               <p className="mt-3 text-lg leading-relaxed text-ink-soft">{s.body}</p>
             </section>
           ))}
+        </div>
+
+        <div className="mt-8 max-w-measure">
+          <Link href="/who-we-serve" className="link text-lg">
+            See every group we serve, and who we never will
+          </Link>
         </div>
 
         <section className="mt-12 max-w-measure rounded-xl border border-line bg-panel p-6">

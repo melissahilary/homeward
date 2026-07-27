@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { EMAILS, getEmail } from "@/lib/emails";
+import { EMAILS, getEmail, SENDER } from "@/lib/emails";
 
 export function generateStaticParams() {
   return EMAILS.map((e) => ({ slug: e.slug }));
@@ -37,6 +37,7 @@ export default function EmailPreviewPage({ params }) {
         <div className="mt-8 max-w-2xl overflow-hidden rounded-xl border border-line bg-white">
           <dl className="divide-y divide-line border-b border-line text-base">
             <Header2 label="From" value={email.from} />
+            <Header2 label="Reply-to" value={SENDER.replyTo} muted />
             <Header2 label="Subject" value={email.subject} />
             <Header2 label="Preview" value={email.preheader} muted />
           </dl>

@@ -44,7 +44,7 @@ function colorOf(kind) {
   return INK;
 }
 
-export default function DiagramSVG({ id = "daykeep-diagram" }) {
+export default function DiagramSVG({ id = "daykeep-diagram", branded = true }) {
   return (
     <svg
       id={id}
@@ -61,9 +61,11 @@ export default function DiagramSVG({ id = "daykeep-diagram" }) {
       <text x={MX} y={72} fontFamily="Inter, sans-serif" fontSize="16" fill={SOFT}>
         Twelve steps, days 20–33. You have run it fifty times. Here it is drawn once.
       </text>
-      <text x={W - MX} y={44} textAnchor="end" fontFamily="Inter, sans-serif" fontSize="16" fontWeight="600" fill={INK}>
-        Daykeep
-      </text>
+      {branded && (
+        <text x={W - MX} y={44} textAnchor="end" fontFamily="Inter, sans-serif" fontSize="16" fontWeight="600" fill={INK}>
+          Daykeep
+        </text>
+      )}
 
       {/* Phase bands */}
       {PHASES.map((p) => {
@@ -114,7 +116,7 @@ export default function DiagramSVG({ id = "daykeep-diagram" }) {
           Where the loop breaks
         </text>
         <text x={W - MX * 2} y="0" textAnchor="end" fontFamily="Inter, sans-serif" fontSize="13" fill={FAINT}>
-          Schedule II has no refills. daykeep.app
+          {branded ? "Schedule II has no refills. daykeep.app" : "Schedule II has no refills."}
         </text>
       </g>
     </svg>
