@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BRAND, POSITIONING } from "@/lib/site";
+import { TRADEMARK_NOTICE } from "@/lib/drugs";
 
 const COLUMNS = [
   {
@@ -35,6 +36,7 @@ const COLUMNS = [
   {
     title: "Library",
     links: [
+      { label: "By medication", href: "/drugs" },
       { label: "State rules", href: "/states" },
       { label: "Your three rights", href: "/rights" },
       { label: "Message library", href: "/messages" },
@@ -114,6 +116,9 @@ export default function Footer() {
           <p>© 2026 {BRAND.name}. Cash only. No third-party payers.</p>
           <p>Your health data coordinates your refill and nothing else.</p>
         </div>
+        <p className="mt-4 max-w-3xl text-xs leading-relaxed text-ink-faint">
+          {TRADEMARK_NOTICE}
+        </p>
       </div>
     </footer>
   );

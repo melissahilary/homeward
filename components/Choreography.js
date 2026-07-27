@@ -10,7 +10,7 @@ import { POSITIONING } from "@/lib/site";
 // a valid stopping point. prefers-reduced-motion renders the final frame,
 // static, at the top: the complete state, not a degraded one.
 const FRAMES = [
-  { frame: 1, eyebrow: "Schedule II has no refills", headline: "This is the month you already run.", sub: null },
+  { frame: 1, eyebrow: "For anyone on a prescription stimulant", headline: "Prescription stimulants can't be refilled.", sub: "So you run the whole process again, every thirty days. This is the month you already run." },
   { frame: 2, eyebrow: null, headline: "Twelve steps. You know them by heart.", sub: "Request. Transmit. Verify. Locate. Transfer. Every single month." },
   { frame: 3, eyebrow: null, headline: "Three of these break. Every time.", sub: "It was a system all along. Not a personal failing." },
   { frame: 4, eyebrow: null, headline: "Three of them are rights you already hold.", sub: "Dated fills. A transfer you can start yourself. A partial fill. Leverage you were never told about." },
@@ -91,10 +91,14 @@ export default function Choreography() {
       <section className="border-b border-line py-20">
         <div className="mx-auto w-full max-w-content px-5 md:px-8">
           <p className="mb-5 font-mono text-sm uppercase tracking-[0.2em] text-ink-faint">
-            Schedule II has no refills
+            Prescription stimulants have no refills
           </p>
-          <h1 className="max-w-4xl text-display font-semibold text-ink">{f.headline}</h1>
-          <p className="mt-6 max-w-measure text-xl text-ink-soft">{f.sub}</p>
+          <h1 className="max-w-4xl text-display font-semibold text-ink">
+            Prescription stimulants can&rsquo;t be refilled.
+          </h1>
+          <p className="mt-6 max-w-measure text-xl text-ink-soft">
+            So you run the whole process again, every thirty days. {f.headline}
+          </p>
           <div className="mt-12 overflow-x-auto">
             <div className="min-w-[720px]"><FrameSVG frame={5} /></div>
           </div>

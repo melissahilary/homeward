@@ -3,11 +3,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CopyBlock from "@/components/CopyBlock";
 import Choreography from "@/components/Choreography";
+import Comparison from "@/components/Comparison";
 import {
   TEMPLATE,
   RIGHTS,
   NOT_FOR,
-  CHARTER,
+  NEVER_DO,
+  COMPARISON,
   FAQ,
   PRICING,
 } from "@/lib/site";
@@ -58,6 +60,24 @@ export default function Home() {
           </Link>
         </Section>
 
+        {/* What we never do — five standards, stated as standards. */}
+        <Section id="never-do" className="border-t border-line bg-panel">
+          <SectionHead title={NEVER_DO.title} />
+          <ul className="mt-8 max-w-measure space-y-4">
+            {NEVER_DO.items.map((item) => (
+              <li key={item} className="flex items-baseline gap-4 border-b border-line pb-4 text-xl text-ink">
+                <span className="h-2 w-2 shrink-0 translate-y-[-0.15em] rounded-full bg-stock" aria-hidden="true" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6">
+            <Link href="/charter" className="link text-lg">
+              Read the full charter
+            </Link>
+          </div>
+        </Section>
+
         {/* Who this is not for. */}
         <Section id="not-for">
           <SectionHead title={NOT_FOR.title} />
@@ -77,23 +97,22 @@ export default function Home() {
           </p>
         </Section>
 
-        {/* What we never do — summary + link to the full charter. */}
-        <Section id="charter-summary" className="border-t border-line bg-panel">
-          <SectionHead title={CHARTER.title} lede={CHARTER.intro} />
-          <ol className="mt-6 max-w-3xl divide-y divide-line rounded-xl border border-line bg-white">
-            {CHARTER.rules.map((rule) => (
-              <li key={rule.n} className="flex gap-4 px-5 py-4">
-                <span className="font-mono text-base text-ink-faint">
-                  {rule.n}
-                </span>
-                <p className="text-lg text-ink">{rule.title}</p>
-              </li>
-            ))}
-          </ol>
+        {/* The transfer map — the asset a competitor cannot copy. */}
+        <Section id="map" className="border-t border-line">
+          <SectionHead
+            title="Which counter actually works"
+            lede="Not a list of pharmacies. A probability, ranked by recorded completion, with the sample size on every result."
+          />
           <div className="mt-6">
-            <Link href="/charter" className="link text-lg">
-              Read the full charter
-            </Link>
+            <Link href="/pharmacies" className="btn text-lg">See the prediction map</Link>
+          </div>
+        </Section>
+
+        {/* Comparison — after the diagram, before pricing. One table, one place. */}
+        <Section id="comparison" className="border-t border-line bg-panel">
+          <SectionHead title={COMPARISON.title} />
+          <div className="mt-8">
+            <Comparison />
           </div>
         </Section>
 
